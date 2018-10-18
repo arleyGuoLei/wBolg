@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.i7xy.cn/"/>
-  <updated>2018-10-18T09:04:27.568Z</updated>
+  <updated>2018-10-18T09:35:35.646Z</updated>
   <id>https://www.i7xy.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.i7xy.cn/2018/10/18/ES6%E6%80%BB%E7%BB%93%E5%BD%92%E7%BA%B3/"/>
     <id>https://www.i7xy.cn/2018/10/18/ES6总结归纳/</id>
     <published>2018-10-18T08:59:33.000Z</published>
-    <updated>2018-10-18T09:04:27.568Z</updated>
+    <updated>2018-10-18T09:35:35.646Z</updated>
     
-    <content type="html"><![CDATA[<p>学习了ES6之后，感觉内容很多，保持二八原则，掌握好常用的、有用的这个可以让我们的开发快速起飞。<br><a id="more"></a></p><h4 id="一-变量声明const和let"><a href="#一-变量声明const和let" class="headerlink" title="一.变量声明const和let"></a>一.变量声明const和let</h4><ol><li><code>var</code>存在变量提升：无论声明在何处，都会被视为声明在函数的最顶部</li></ol><p>例如：</p>]]></content>
+    <content type="html"><![CDATA[<p>学习了ES6之后，感觉内容很多，保持二八原则，掌握好常用的、有用的这个可以让我们的开发快速起飞。<br><a id="more"></a></p><h4 id="一-变量声明const和let"><a href="#一-变量声明const和let" class="headerlink" title="一.变量声明const和let"></a>一.变量声明const和let</h4><ol><li><code>const</code> 和 <code>let</code> 的作用域为最近相邻的<code>{}</code></li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="number">1</span>!==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> test = <span class="string">'hello ES6'</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(test);</span><br><span class="line">    <span class="comment">//let和const报错，var 定义的时候不报错</span></span><br><span class="line">    <span class="comment">// var会变量提升至函数顶部</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// var 时候 test = undefined；</span></span><br><span class="line">    <span class="comment">// let 和 const 报错：Uncaught ReferenceError: test is not defined</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
