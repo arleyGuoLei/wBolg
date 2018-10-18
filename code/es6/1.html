@@ -9,17 +9,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 
+<button class="btn">x-1</button>
+<button class="btn">x-2</button>
+<button class="btn">x-3</button>
+<button class="btn">x-4</button>
+<button class="btn">x-5</button>
+<button class="btn">x-6</button>
+<button class="btn">x-7</button>
+<button class="btn">x-8</button>
+<button class="btn">x-9</button>
+<button class="btn">x-10</button>
+
 <body>
   <script>
-    var a = []
-    for (var i = 0; i < 5; i++) {
-      a[i] = (function (i) {
-        return function () {
-          console.log(i)
-        }
-      })(i)
+    for (var i = 1; i <= 5; i++) {
+
+      setTimeout(function timer() {
+        console.log(i);
+      }, 1000);
+
     }
-    a[2](); //2
+
+// 上面的代码会输出什么？怎么改动上述代码，使其依次输出1、2、3、4、5
+
   </script>
 </body>
 
