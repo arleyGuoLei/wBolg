@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.i7xy.cn/"/>
-  <updated>2018-10-18T08:10:50.256Z</updated>
+  <updated>2018-10-18T09:04:27.568Z</updated>
   <id>https://www.i7xy.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6总结归纳</title>
+    <link href="https://www.i7xy.cn/2018/10/18/ES6%E6%80%BB%E7%BB%93%E5%BD%92%E7%BA%B3/"/>
+    <id>https://www.i7xy.cn/2018/10/18/ES6总结归纳/</id>
+    <published>2018-10-18T08:59:33.000Z</published>
+    <updated>2018-10-18T09:04:27.568Z</updated>
+    
+    <content type="html"><![CDATA[<p>学习了ES6之后，感觉内容很多，保持二八原则，掌握好常用的、有用的这个可以让我们的开发快速起飞。<br><a id="more"></a></p><h4 id="一-变量声明const和let"><a href="#一-变量声明const和let" class="headerlink" title="一.变量声明const和let"></a>一.变量声明const和let</h4><ol><li><code>var</code>存在变量提升：无论声明在何处，都会被视为声明在函数的最顶部</li></ol><p>例如：</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习了ES6之后，感觉内容很多，保持二八原则，掌握好常用的、有用的这个可以让我们的开发快速起飞。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ES6" scheme="https://www.i7xy.cn/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://www.i7xy.cn/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次原生css3实现响应式布局 - timeLine</title>
