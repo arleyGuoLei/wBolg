@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[display: inline-block 导致换行]]></title>
+    <url>%2F2018%2F10%2F02%2Fdisplay-inline-block-%E5%AF%BC%E8%87%B4%E6%8D%A2%E8%A1%8C%2F</url>
+    <content type="text"><![CDATA[前端神奇的现象，70% + 30% &gt; 100% display: inline-block导致换行:标签与标签之间的换行会占据一定大小,导致换行:看下面的图就知道了. 比如:123456789101112131415161718192021222324252627282930313233343536373839404142434445&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt; &lt;title&gt;`display: inline-block`导致换行&lt;/title&gt; &lt;style&gt; * &#123; margin: 0; &#125; .containter .item:nth-child(1) &#123; display: inline-block; width: 33.3333333333333333333%; background-color: red; height: 100px; &#125; .containter .item:nth-child(2) &#123; display: inline-block; width: 33.3333333333333333333%; background-color: yellow; height: 100px; &#125; .containter .item:nth-child(3) &#123; display: inline-block; width: 33.3333333333333333333%; background-color: blue; height: 100px; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class="containter"&gt; &lt;div class="item"&gt;&lt;/div&gt; &lt;!-- 因为item div之后的换行导致 --&gt; &lt;div class="item"&gt;&lt;/div&gt; &lt;div class="item"&gt;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt;&lt;/html&gt; 解决方法: 123.containter &#123; font-size: 0;&#125;]]></content>
+      <categories>
+        <category>布局艺术</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+</search>
