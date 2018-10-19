@@ -1,0 +1,58 @@
+body{
+  overflow: hidden;
+}
+.container{
+  margin: 140px auto;
+  width: 360px;
+  text-align: center;
+  background-color: #eeeeee;
+  padding: 4px;
+  overflow: hidden;
+}
+.title{
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  background-color: #fff;
+  width: 180px;
+  text-align: center;
+
+}
+#table{
+  width: 360px;
+}
+#calcResult{
+  width: 300px;
+  height: 28px;
+  margin: 20px;
+  text-align: right;
+}
+
+td{
+  text-align: center;
+  border: 1px #000000 solid;
+}
+
+.tip{
+  width: 200px;
+  height: 100px;
+  background-color: #EBEBE4;
+  border: 2px #EBEBE4 solid;
+  position: absolute;
+  left: 45%;
+  top: 10px;
+  border-radius: 4px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+.tip::after{
+  content: ' ';
+  display: block;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  bottom: -40px;
+  left: 30px;
+  border:20px transparent solid;
+  border-top-color: #EBEBE4;
+}
