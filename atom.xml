@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.i7xy.cn/"/>
-  <updated>2018-10-18T13:54:45.853Z</updated>
+  <updated>2018-10-19T15:33:49.095Z</updated>
   <id>https://www.i7xy.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些小前端DEMO</title>
+    <link href="https://www.i7xy.cn/2018/10/19/%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%89%8D%E7%AB%AFDEMO/"/>
+    <id>https://www.i7xy.cn/2018/10/19/一些小前端DEMO/</id>
+    <published>2018-10-19T15:15:21.000Z</published>
+    <updated>2018-10-19T15:33:49.095Z</updated>
+    
+    <content type="html"><![CDATA[<p>自己平时学习过程中写的一些demo，整理贴，持续更新ing.</p><a id="more"></a><ol><li><p>响应式时间轴：<a href="https://www.i7xy.cn/code/calc/">https://www.i7xy.cn/code/calc/</a></p></li><li><p>计算器：<a href="https://www.i7xy.cn/code/timeline/">https://www.i7xy.cn/code/timeline/</a></p></li><li><p>爱心鱼(html-cavas游戏)：<a href="https://www.i7xy.cn/code/fish/">https://www.i7xy.cn/code/fish/</a></p></li><li><p>点名系统(js练习)：<a href="https://www.i7xy.cn/code/getName/">https://www.i7xy.cn/code/getName/</a></p></li><li><p>安卓机器人(CSS绘制)：<a href="https://www.i7xy.cn/code/android/">https://www.i7xy.cn/code/android/</a></p></li><li><p>七巧板(CSS绘制)：<a href="https://www.i7xy.cn/code/SevBoard/">https://www.i7xy.cn/code/SevBoard/</a></p></li><li><p>关于页面：<a href="https://www.i7xy.cn/code/about/">https://www.i7xy.cn/code/about/</a></p></li><li><p>多种方法实现一个页面的左中右布局：<a href="https://www.i7xy.cn/code/school/exp_10_2.html">https://www.i7xy.cn/code/school/exp_10_2.html</a></p></li><li><p>普通企业网站首页布局(学校作业)：<a href="https://www.i7xy.cn/code/school/exp_10_1.html">https://www.i7xy.cn/code/school/exp_10_1.html</a></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自己平时学习过程中写的一些demo，整理贴，持续更新ing.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="https://www.i7xy.cn/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="JS" scheme="https://www.i7xy.cn/tags/JS/"/>
+    
+      <category term="学习笔记" scheme="https://www.i7xy.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CSS" scheme="https://www.i7xy.cn/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>Js闭包</title>

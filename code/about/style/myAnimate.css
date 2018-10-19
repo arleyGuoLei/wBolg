@@ -1,0 +1,18 @@
+.header-active{
+  background: rgba(0,0,0,.5);
+  transition: all .5s;
+}
+
+.header__nav-a-leave{
+  color: #ffffff;
+  transition: all .5s;
+}
+
+.header__nav-item-tip{
+  transition: all .5s;
+}
+
+.header__nav-a-active{
+  color: #0C9695;
+}
+

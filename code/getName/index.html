@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>我要点名</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <h1>点名系统</h1>
+  </header>
+
+  <div class="container">
+
+    <ul class="stu-box" id="stuBox">
+      <!-- <li class="stu-item">
+        <p class="num">学号:1</p>
+        <p class="name">姓名:郭磊</p>
+        <p class="sex">性别:男</p>
+      </li> -->
+    </ul>
+  </div>
+  <footer class="footer">
+    <h2>控制台</h2>
+    <div class="f-wrap">
+      <div class="f-box">
+        <p class="f-title">数据生成</p>
+        <label>学生人数：<input maxlength="3" value="34" id="stuNum" type="text"></label>
+        <input type="button" value="生成" id="createStu">
+      </div>
+      <div class="f-box">
+        <p class="f-title">随机点名</p>
+        <label for="nan"><input type="radio" name="sexRadio" id="nan" checked>男</label>
+        <label for="nv"><input type="radio" name="sexRadio" id="nv">女</label>
+        <input type="button" id="getStu" value="开始随机选取">
+      </div>
+    </div>
+  </footer>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.header{
+  text-align: center;
+}
+
+.container{
+  margin: 0 12px;
+}
+
+.stu-box{
+  margin:20px 0;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #eee;
+  padding: 12px;
+}
+.stu-item{
+  /* width: calc(10% - 2px); */
+  width: 130px;
+  overflow: hidden;
+  float: left;
+  /* background-color: #fff; */
+  border: 1px red solid;
+  border-radius: 4px;
+  padding: 4px;
+  box-sizing: border-box;
+  margin: 2px 2px 2px 0;
+}
+
+/* 控制台 */
+.footer{
+  margin: 0 12px 30px 12px;
+}
+
+.footer h2{
+  text-align: center;
+  position: relative;
+  margin-bottom: 12px;
+}
+/* .footer h2::before{
+  content: ' ';
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
+
+.footer h2::after{
+  content: ' ';
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  right: 45%;
+} */
+.f-wrap{
+  text-align: center;
+}
+.f-box{
+  display: inline-block;
+  text-align: left;
+  margin-right: 30px;
+}
+.f-title{
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.stu-select{
+  background-color: red;
+}

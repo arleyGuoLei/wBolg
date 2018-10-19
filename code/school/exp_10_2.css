@@ -1,0 +1,88 @@
+.bg{
+  background-color: #eeeeee;
+}
+header>div{
+  height: 80px;
+  margin-bottom: 4px;
+}
+
+header>nav{
+  margin-bottom: 4px;
+}
+footer{
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 第一种方法 */
+/* .container{
+  margin-bottom: 4px;
+  overflow: hidden;
+
+  display: flex;
+  flex: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.item{
+  width: 24.9%;
+  height: 400px;
+} */
+
+/* 第二种方法 */
+
+/* .container{
+  margin-bottom: 4px;
+  overflow: hidden;
+  font-size: 0;
+}
+.item{
+  width: calc(25% - 4px);
+  height: 400px;
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 4px;
+} */
+/* ① */
+/* .container .item:nth-child(4){
+  margin: 0;
+} */
+
+/* ② */
+/* .container .item:last-child{
+  margin: 0;
+  background-color: red;
+} */
+
+/* 第三种方法 */
+
+.container{
+  position: relative;
+  height: 400px;
+  margin-bottom: 4px;
+}
+
+.item{
+  position: absolute;
+  width: calc(25% - 4px);
+  margin-right: 4px;
+  height: 400px;
+}
+.item:nth-child(1){
+  background-color: red;
+  left: 0%;
+}
+.item:nth-child(2){
+  background-color: red;
+  left: 25%;
+}
+.item:nth-child(3){
+  background-color: red;
+  left: 50%;
+}
+.item:nth-child(4){
+  background-color: red;
+  left: 75%;
+  margin: 0;
+}
+

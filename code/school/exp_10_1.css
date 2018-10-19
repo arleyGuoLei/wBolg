@@ -1,0 +1,136 @@
+.header{
+  margin: 0 80px;
+  overflow: hidden;
+  position: relative;
+  background-color: #eeeeee;
+}
+.logo{
+  display: inline-block;
+  width: 250px;
+  height: 80px;
+  background: red;
+}
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+.nav{
+  list-style: none;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.nav>li{
+  display: inline-block;
+  margin-right: 30px;
+}
+.nav>li::after{
+  margin-left: 30px;
+  content: ' ';
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: #000;
+}
+
+.nav li:last-child::after{
+  display: none;
+}
+
+/* 顶部完成 */
+
+
+/* container */
+.container{
+  margin: 0 80px;
+  margin-top: 10px;
+  position: relative;
+}
+.container::after{
+  content: ' ';
+  display: block;
+  clear: both;
+  height: 0;
+  width: 0;
+}
+.left{
+  padding: 100px 0;
+  list-style-type: none;
+  text-align: center;
+  width: 20%;
+  background-color: #eeeeee;
+  float: left;
+  margin: 0;
+}
+.left li{
+  margin-bottom: 20px;
+}
+
+.right{
+  float: right;
+  width: 78%;
+  background-color: #eeeeee;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+.r-top{
+  margin-top: 10px;
+}
+.r-main{
+  background-color: red;
+  width: 100%;
+  height: 0;
+  padding-bottom: 25%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.r-img{
+  width: 100%;
+}
+
+
+/* footer */
+.footer{
+  background-color: #eeeeee;
+  height: 100px;
+  margin: 0 80px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+/* game */
+
+
+.msg::before{
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  top: 12px;
+  background-color: aquamarine;
+  transform: rotate(45deg);
+}
+.msg{
+  position: relative;
+  margin: 20px auto;
+  background-color: aquamarine;
+  width: 600px;
+  padding: 20px;
+  border-radius: 4px;
+}
+.msg::after{
+    
+}
