@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[对Js运行机制的理解]]></title>
+    <url>%2F2018%2F10%2F20%2F%E5%AF%B9Js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[Js是假的多线程，子线程由一个主线程控制，子线程不能操作DOM。基本意味着：同一个时间只能做一件事 为了提高CPU的利用率，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以这个标准并没有改变JavaScript单线程的本质 就喜欢案例… 12345console.log(1);// 同步任务，直接进入主线程执行，所以先输出1setTimeout(function()&#123; //setTimeout是异步任务，放进任务队列，等主线程调用 console.log(3);&#125;,0);console.log(2); 1234567891011console.log("start");setTimeout(function () &#123; console.log("我是异步，放进任务队列等待主线程空闲后执行");&#125;, 0);setTimeout((function () &#123; console.log("我被放进了主线程，并且执行了");&#125;)(), 10000);//??? 迷惑 10s，是情况1还是2？// 1. 运行到setTimeout就把setTimeout的回调函数放入任务队列，10s后如果主线程空闲，即运行// 2. 运行到setTimeout，先不管，10s之后把回调函数放入任务队列，主线程如果这时候空闲，即运行console.log("over");]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Math的三个取整方法区别]]></title>
     <url>%2F2018%2F10%2F20%2FMath%E7%9A%84%E4%B8%89%E4%B8%AA%E5%8F%96%E6%95%B4%E6%96%B9%E6%B3%95%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[Math.round() ： 四舍五入 Math.ceil() ： ceil为天花板意思，所以为向上取整。 让数尽量变大 Math.floor() ： floor为地板意思，所以为向下取整。 让数尽量变小 1.Math.round()：根据“round”的字面意思“附近、周围”，可以猜测该函数是求一个附近的整数，看下面几个例子就明白。 小数点后第一位&lt;5正数：Math.round(11.46)=11负数：Math.round(-11.46)=-11 小数点后第一位&gt;5正数：Math.round(11.68)=12负数：Math.round(-11.68)=-12 小数点后第一位=5正数：Math.round(11.5)=12负数：Math.round(-11.5)=-11总结：（小数点后第一位）大于五全部加，等于五正数加，小于五全不加。 2.Math.ceil()：根据“ceil”的字面意思“天花板”去理解；例如：Math.ceil(11.46)=Math.ceil(11.68)=Math.ceil(11.5)=12Math.ceil(-11.46)=Math.ceil(-11.68)=Math.ceil(-11.5)=-11 3.Math.floor()：根据“floor”的字面意思“地板”去理解；例如：Math.ceil(11.46)=Math.ceil(11.68)=Math.ceil(11.5)=11Math.ceil(-11.46)=Math.ceil(-11.68)=Math.ceil(-11.5)=-12]]></content>
