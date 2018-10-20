@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[对Js运行机制的理解]]></title>
     <url>%2F2018%2F10%2F20%2F%E5%AF%B9Js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[Js是假的多线程，子线程由一个主线程控制，子线程不能操作DOM。基本意味着：同一个时间只能做一件事 为了提高CPU的利用率，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以这个标准并没有改变JavaScript单线程的本质 就喜欢案例… 12345console.log(1);// 同步任务，直接进入主线程执行，所以先输出1setTimeout(function()&#123; //setTimeout是异步任务，放进任务队列，等主线程调用 console.log(3);&#125;,0);console.log(2); 1234567891011console.log("start");setTimeout(function () &#123; console.log("我是异步，放进任务队列等待主线程空闲后执行");&#125;, 0);setTimeout((function () &#123; console.log("我被放进了主线程，并且执行了");&#125;)(), 10000);//??? 迷惑 10s，是情况1还是2？// 1. 运行到setTimeout就把setTimeout的回调函数放入任务队列，10s后如果主线程空闲，即运行// 2. 运行到setTimeout，先不管，10s之后把回调函数放入任务队列，主线程如果这时候空闲，即运行console.log("over");]]></content>
+    <content type="text"><![CDATA[Js是假的多线程，子线程由一个主线程控制，子线程不能操作DOM。基本意味着：同一个时间只能做一件事 为了提高CPU的利用率，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以这个标准并没有改变JavaScript单线程的本质 就喜欢案例… 1、12345console.log(1);// 同步任务，直接进入主线程执行，所以先输出1setTimeout(function()&#123; //setTimeout是异步任务，放进任务队列，等主线程调用 console.log(3);&#125;,0);console.log(2); 结果 123 2、1234567891011console.log("start");setTimeout(function () &#123; console.log("我是异步，放进任务队列等待主线程空闲后执行");&#125;, 0);setTimeout((function () &#123; console.log("我被放进了主线程，并且执行了");&#125;)(), 10000);//??? 迷惑 10s，是情况1还是2？// 1. 运行到setTimeout就把setTimeout的回调函数放入任务队列，10s后如果主线程空闲，即运行// 2. 运行到setTimeout，先不管，10s之后把回调函数放入任务队列，主线程如果这时候空闲，即运行console.log("over"); start我被放进了主线程，并且执行了over我是异步，放进任务队列等待主线程空闲后执行]]></content>
       <categories>
         <category>其他</category>
       </categories>

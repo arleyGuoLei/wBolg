@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="前端私塾">
 <meta property="og:description" content="Js是假的多线程，子线程由一个主线程控制，子线程不能操作DOM。基本意味着：同一个时间只能做一件事  为了提高CPU的利用率，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以这个标准并没有改变JavaScript单线程的本质">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-20T12:29:15.021Z">
+<meta property="og:updated_time" content="2018-10-20T12:32:19.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对Js运行机制的理解">
 <meta name="twitter:description" content="Js是假的多线程，子线程由一个主线程控制，子线程不能操作DOM。基本意味着：同一个时间只能做一件事  为了提高CPU的利用率，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以这个标准并没有改变JavaScript单线程的本质">
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  287
+                  327
                 </span>
               
 
@@ -458,8 +458,15 @@
 </blockquote>
 <a id="more"></a>
 <p>就喜欢案例…</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);<span class="comment">// 同步任务，直接进入主线程执行，所以先输出1</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//setTimeout是异步任务，放进任务队列，等主线程调用</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"start"</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"我是异步，放进任务队列等待主线程空闲后执行"</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line">setTimeout((<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"我被放进了主线程，并且执行了"</span>);</span><br><span class="line">&#125;)(), <span class="number">10000</span>);</span><br><span class="line"><span class="comment">//??? 迷惑 10s，是情况1还是2？</span></span><br><span class="line"><span class="comment">// 1. 运行到setTimeout就把setTimeout的回调函数放入任务队列，10s后如果主线程空闲，即运行</span></span><br><span class="line"><span class="comment">// 2. 运行到setTimeout，先不管，10s之后把回调函数放入任务队列，主线程如果这时候空闲，即运行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"over"</span>);</span><br></pre></td></tr></table></figure>
+<p>1、<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);<span class="comment">// 同步任务，直接进入主线程执行，所以先输出1</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//setTimeout是异步任务，放进任务队列，等主线程调用</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>结果 123</p>
+</blockquote>
+<p>2、<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"start"</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"我是异步，放进任务队列等待主线程空闲后执行"</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line">setTimeout((<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"我被放进了主线程，并且执行了"</span>);</span><br><span class="line">&#125;)(), <span class="number">10000</span>);</span><br><span class="line"><span class="comment">//??? 迷惑 10s，是情况1还是2？</span></span><br><span class="line"><span class="comment">// 1. 运行到setTimeout就把setTimeout的回调函数放入任务队列，10s后如果主线程空闲，即运行</span></span><br><span class="line"><span class="comment">// 2. 运行到setTimeout，先不管，10s之后把回调函数放入任务队列，主线程如果这时候空闲，即运行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"over"</span>);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>start<br>我被放进了主线程，并且执行了<br>over<br>我是异步，放进任务队列等待主线程空闲后执行</p>
+</blockquote>
+
       
     </div>
     
@@ -719,7 +726,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.3k</span>
+    <span title="Site words total count">11.4k</span>
   
 </div>
 
