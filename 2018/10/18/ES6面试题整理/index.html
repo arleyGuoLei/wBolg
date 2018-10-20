@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="前端私塾">
 <meta property="og:description" content="这年头，到处都是ES6…持续更新ing…">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-18T12:37:08.592Z">
+<meta property="og:updated_time" content="2018-10-20T09:01:21.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6面试题整理">
 <meta name="twitter:description" content="这年头，到处都是ES6…持续更新ing…">
@@ -330,6 +330,11 @@
         
 
         <div class="post-meta">
+         
+            <i class="fa fa-thumb-tack"></i>
+            <font color=555555>置顶</font>
+            <span class="post-meta-divider">|</span>
+          
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -443,6 +448,10 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  funcs.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">funcs.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">func</span>) </span>&#123;</span><br><span class="line">  func(); <span class="comment">//依次输出0-9</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>知识回顾(forEach)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//forEach 回顾</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>];</span><br><span class="line">numbers.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"num["</span> + index + <span class="string">"] = "</span>+item);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// num[0] = 4</span></span><br><span class="line"><span class="comment">// num[1] = 9</span></span><br><span class="line"><span class="comment">// num[2] = 16</span></span><br><span class="line"><span class="comment">// num[3] = 25</span></span><br></pre></td></tr></table></figure>
+<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p>题目：红灯三秒亮一次，绿灯两秒亮一次，黄灯一秒亮一次；如何让三个灯不断交替重复亮灯？三个亮灯函数已经存在：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">red</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'red    - '</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">green</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'green  - '</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">yellow</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'yellow - '</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答案：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//亮灯函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tip</span>(<span class="params">fn, timer</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      fn();</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;, timer);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">  resolve();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  promise.then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> tip(red, <span class="number">3000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> tip(green, <span class="number">2000</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> tip(yellow, <span class="number">1000</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(</span><br><span class="line">      <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        loop();</span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loop();</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -614,7 +623,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,6 +670,18 @@
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/arley_5bc32c4b358c6" target="_blank" title="segmentfault">
+                      
+                        <i class="fa fa-fw fa-flag"></i>segmentfault</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5bcadd8251882556b3589211" target="_blank" title="jueJin">
+                      
+                        <i class="fa fa-fw fa-battery-4"></i>jueJin</a>
+                  </span>
+                
             </div>
           
 
@@ -685,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#let和const"><span class="nav-number">1.</span> <span class="nav-text">let和const</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#let和const"><span class="nav-number">1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">2.</span> <span class="nav-text">Promise</span></a></li></ol></div>
             
 
           </div>

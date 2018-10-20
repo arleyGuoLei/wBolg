@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>promise</title>
+</head>
+
+<body>
+  <script>
+    // promise = new Promise(
+    //   function (A) {
+    //     setTimeout(() => {
+    //       A("获取数据完成");
+    //     }, 500)
+    //   }
+    // );
+
+    // promise.then(
+    //   function (data) {
+    //     console.log("上面执行了A");
+    //     throw ("我要抛出异常")
+    //   }
+    // ).then(
+    //   function () {
+    //     console.log("运行不到我了");
+    //   }
+    // ).catch(
+    //   function (err) {
+    //     // 最后的catch()方法可以捕获在这一条Promise链上的异常
+    //     console.log(err);// 出错：reject
+    //   }
+    // )
+
+
+    const getRandom = () => +(Math.random() * 1000).toFixed(0);
+
+    const asyncTask = taskID => new Promise(resolve => {
+      let timeout = getRandom();
+      console.log(`taskID=${taskID} start.`);
+      setTimeout(function () {
+        console.log(`taskID=${taskID} finished in time=${timeout}.`);
+        resolve(taskID)
+      }, timeout);
+    });
+
+    Promise.all([asyncTask(1), asyncTask(2), asyncTask(3)])
+      .then(resultList => {
+        console.log('results:', resultList);
+      });
+  </script>
+</body>
+
+</html>

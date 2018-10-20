@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 题目：红灯三秒亮一次，绿灯两秒亮一次，黄灯一秒亮一次；如何让三个灯不断交替重复亮灯？三个亮灯函数已经存在：
+    function red() {
+      console.log('red    - ', new Date());
+    }
+
+    function green() {
+      console.log('green  - ', new Date());
+    }
+
+    function yellow() {
+      console.log('yellow - ', new Date());
+    }
+
+    //亮灯函数
+    function tip(fn, timer) {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          fn();
+          resolve();
+        }, timer);
+      });
+    }
+
+    var promise = new Promise(function (resolve) {
+      resolve();
+    });
+    function loop() {
+      promise.then(function () {
+        return tip(red, 3000)
+      })
+        .then(function () {
+          return tip(green, 2000)
+        })
+        .then(function () {
+          return tip(yellow, 1000)
+        })
+        .then(
+          function () {
+            loop();
+          }
+        )
+    }
+
+    loop();
+
+
+    // var promiseA = new Promise(
+    //   function (resolve) {
+    //     setTimeout(function () {
+    //       red();
+    //       resolve();
+    //     }, 3000);
+    //   }
+    // );
+
+    // promiseA.then(function () {
+    //   var promiseB = new Promise(
+    //     function (resolve) {
+    //       setTimeout(function () {
+    //         green();
+    //         resolve();
+    //       }, 2000);
+    //     }
+    //   )
+    // })
+
+    // promiseB.then(function () {
+    //   var promiseC = new Promise(
+    //     function (resolve) {
+    //       setTimeout(function () {
+    //         yellow();
+    //         resolve();
+    //       }, 1000);
+    //     }
+    //   )
+    // })
+
+    // promiseC.then(function () {
+    //   promiseA();
+    // })
+
+
+
+
+
+
+
+    // function showRed(callback){
+    //   setTimeout(function(){
+    //     red();
+    //     callback(showYellow);
+    //   }, 3000);
+
+    // }
+    // function showGreen(callback){
+    //   setTimeout(function(){
+    //     green();
+    //     callback(showRed);
+    //   }, 2000)
+    // }
+    // function showYellow(callback){
+    //   setTimeout(function(){
+    //     callback(showGreen);
+    //     yellow();
+    //   }, 1000)
+    // }
+
+    // showRed(showGreen);
+
+
+
+  </script>
+</body>
+
+</html>
