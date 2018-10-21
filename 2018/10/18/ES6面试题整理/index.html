@@ -90,7 +90,7 @@
 <meta property="og:description" content="这年头，到处都是ES6…持续更新ing…">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/10/21/5bcc2e64b93b4.png">
-<meta property="og:updated_time" content="2018-10-21T09:49:32.704Z">
+<meta property="og:updated_time" content="2018-10-21T11:13:11.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6面试题整理">
 <meta name="twitter:description" content="这年头，到处都是ES6…持续更新ing…">
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k
+                  3k
                 </span>
               
 
@@ -563,6 +563,8 @@
 <blockquote>
 <p>讲解在 <a href="https://www.i7xy.cn/2018/10/18/ES6%E6%80%BB%E7%BB%93%E5%BD%92%E7%BA%B3/">ES6总结归纳</a></p>
 </blockquote>
+<h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请使用 ES6 重构一下代码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第一题</span></span><br><span class="line"><span class="keyword">var</span> jsonParse = <span class="built_in">require</span>(<span class="string">'body-parser'</span>).jsonParse</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二题</span></span><br><span class="line"><span class="keyword">var</span> body = request.body</span><br><span class="line"><span class="keyword">var</span> username = body.username</span><br><span class="line"><span class="keyword">var</span> password = body.password</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一题</span></span><br><span class="line"><span class="keyword">import</span> &#123; jsonParse &#125; <span class="keyword">from</span> <span class="string">'body-parser'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二题</span></span><br><span class="line"><span class="keyword">const</span> &#123; username, password &#125; = request.body</span><br><span class="line"><span class="comment">//const &#123; body, body: &#123; username, password &#125; &#125; = request</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;username&#125;</span> - - - <span class="subst">$&#123;password&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -818,7 +820,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#let和const"><span class="nav-number">1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">2.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-number">4.</span> <span class="nav-text">箭头函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#let和const"><span class="nav-number">1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">2.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-number">4.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解构"><span class="nav-number">5.</span> <span class="nav-text">解构</span></a></li></ol></div>
             
 
           </div>
@@ -852,7 +854,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14.1k</span>
+    <span title="Site words total count">15k</span>
   
 </div>
 
