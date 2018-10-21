@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
+<meta name="description" content="字符串ES6           var name = &quot;Js&quot;;     document.write(&quot;hello&quot; + name + &quot;!!!&quot;); //es5     document.write(`es6 ${name}!!!`); //es6     setInterval(() =&amp;gt; {       const now = new Date()">
 <meta name="keywords" content="前端私塾，前端博客，郭磊，arley">
 <meta property="og:type" content="website">
 <meta property="og:title" content="前端私塾">
-<meta property="og:url" content="https://www.i7xy.cn/categories/ES6/index.html">
+<meta property="og:url" content="https://www.i7xy.cn/code/studyNote/String.html">
 <meta property="og:site_name" content="前端私塾">
-<meta property="og:description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
+<meta property="og:description" content="字符串ES6           var name = &quot;Js&quot;;     document.write(&quot;hello&quot; + name + &quot;!!!&quot;); //es5     document.write(`es6 ${name}!!!`); //es6     setInterval(() =&amp;gt; {       const now = new Date()">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-21T08:18:38.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端私塾">
-<meta name="twitter:description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
+<meta name="twitter:description" content="字符串ES6           var name = &quot;Js&quot;;     document.write(&quot;hello&quot; + name + &quot;!!!&quot;); //es5     document.write(`es6 ${name}!!!`); //es6     setInterval(() =&amp;gt; {       const now = new Date()">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://www.i7xy.cn/categories/ES6/"/>
+  <link rel="canonical" href="https://www.i7xy.cn/code/studyNote/String.html"/>
 
 
 
 
 
-  <title>分类: ES6 | 前端私塾</title>
+  <title> | 前端私塾</title>
   
 
 
@@ -154,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,55 +293,62 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>ES6<small>分类</small>
-        </h2>
-      </div>
+	<h2 class="post-title" itemprop="name headline"></h2>
+
+
+
+</header>
 
       
+      
+      
+      <div class="post-body">
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/10/18/ES6总结归纳/" itemprop="url">
-              
-                <span itemprop="name">ES6总结归纳</span>
-              
-            </a>
-        
-      </h3>
+          <!DOCTYPE html>
+<html lang="zh-CN">
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-18T16:59:33+08:00"
-              content="2018-10-18" >
-          10-18
-        </time>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串ES6</title>
+</head>
+
+<body>
+  <script>
+    var name = "Js";
+    document.write("hello" + name + "!!!<BR>"); //es5
+    document.write(`es6 ${name}!!!<BR>`); //es6
+    setInterval(() => {
+      const now = new Date()
+      const hours = now.getHours().toString()
+      const minutes = now.getMinutes().toString()
+      const seconds = now.getSeconds().toString()
+      console.log(`${hours.padStart(2, 0)}:${minutes.padStart(2, 0)}:${seconds.padStart(2, 0)}`)
+    }, 1000)
+  </script>
+
+</body>
+
+</html>
+        
       </div>
-
-    </header>
-  </article>
-
-
+      
+      
       
     </div>
-
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -348,6 +356,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -632,6 +654,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -649,6 +675,18 @@
       <script id="dsq-count-scr" src="https://arley.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.i7xy.cn/code/studyNote/String.html';
+          this.page.identifier = 'code/studyNote/String.html';
+          this.page.title = '';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://arley.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
