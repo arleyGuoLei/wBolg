@@ -34,22 +34,69 @@
     //   }
     // )
 
+    // <!-- 
+    //     const getRandom = () => +(Math.random() * 1000).toFixed(0);
 
-    const getRandom = () => +(Math.random() * 1000).toFixed(0);
+    //     const asyncTask = taskID => new Promise(resolve => {
+    //       let timeout = getRandom();
+    //       console.log(`taskID=${taskID} start.`);
+    //       setTimeout(function () {
+    //         console.log(`taskID=${taskID} finished in time=${timeout}.`);
+    //         resolve(taskID)
+    //       }, timeout);
+    //     });
 
-    const asyncTask = taskID => new Promise(resolve => {
-      let timeout = getRandom();
-      console.log(`taskID=${taskID} start.`);
-      setTimeout(function () {
-        console.log(`taskID=${taskID} finished in time=${timeout}.`);
-        resolve(taskID)
-      }, timeout);
-    });
+    //     Promise.all([asyncTask(1), asyncTask(2), asyncTask(3)])
+    //       .then(resultList => {
+    //         console.log('results:', resultList);
+    //       }); -->
 
-    Promise.all([asyncTask(1), asyncTask(2), asyncTask(3)])
-      .then(resultList => {
-        console.log('results:', resultList);
-      });
+    // const promise1 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve('success')
+    //   }, 1000)
+    // })
+    // const promise2 = promise1.then(() => {
+    //   throw new Error('error!!!')
+    // })
+
+    // console.log('promise1', promise1)
+    // console.log('promise2', promise2)
+
+    // setTimeout(() => {
+    //   console.log('promise1', promise1)
+    //   console.log('promise2', promise2)
+    // }, 2000)
+
+    // Promise.resolve()
+    //   .then(() => {
+    //     throw Error('error!!!')
+    //   })
+    //   .then((res) => {
+    //     console.log('then: ', res)
+    //   })
+    //   .catch((err) => {
+    //     console.log('catch: ', err)
+    //   })
+
+
+    // const promise = Promise.resolve()
+    //   .then(() => {
+    //     return promise
+    //   })
+    // promise.catch(console.error)
+
+
+    Promise.resolve()
+      .then(function success(res) {
+        throw new Error('error')
+      }, function fail1(e) {
+        console.error('fail1: ', e)
+      })
+      .catch(function fail2(e) {
+        console.error('fail2: ', e)
+      })
+
   </script>
 </body>
 
