@@ -1,1 +1,1 @@
-https://www.i7xy.cn/2018/10/20/对Js运行机制的理解/
+https://www.i7xy.cn/2018/10/22/VUE官方文档笔记/
