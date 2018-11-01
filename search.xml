@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[VUE实现操作系统进程调度模拟]]></title>
+    <url>%2F2018%2F11%2F01%2FVUE%E5%AE%9E%E7%8E%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%A8%A1%E6%8B%9F%2F</url>
+    <content type="text"><![CDATA[《操作系统》课程综合性实验：用C语言（或其它语言，如Java）编程实现对N个进程采用某种进程调度算法（如动态优先权调度算法、先来先服务算法、短进程优先算法、时间片轮转调度算法）调度执行的模拟。 本项目由js(es6)实现了先来先服务,抢占式短进程优先以及时间片轮转调度算法,更多的内容等写实验报告之后在更新。先贴代码和学到的一些东西。 技术栈：JS(ES6),VUE(非模块化实践),Element-ui 项目在线地址：http://wwwi7xy.cn/code/PCB 对象拷贝 12// var m_process = process; // 这是直接复制地址... 必须用拷贝，这样复制的，如果修改m_process，原来的process也会受到影响var m_process = Object.assign(&#123;&#125;, process); // ES6的对象拷贝 解构赋值 1234[m_process.name, m_process.arriveTime, m_process.serviceTime] = processItem; //解构赋值，等同于下// m_process.name = processItem[0];// m_process.arriveTime = Number(processItem[1]);// m_process.serviceTime = Number(processItem[2]); return返回多个内容，用解构赋值接收。123456getAllProcess()&#123; return [m_allProcess, allTime];&#125;// 接收 ↓[this.allProcess, this.allTime] = this.getAllProcess();]]></content>
+      <categories>
+        <category>VUE</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[VUE官方文档笔记]]></title>
     <url>%2F2018%2F10%2F22%2FVUE%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[看官方文档的时候，留下个脚印… vue vue-api vue-cli vuex vue-router Vue 不支持 IE8 及以下版本]]></content>
