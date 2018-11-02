@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="git init git remote add origin git@github.com:arleyGuoLei/Travel.git    git add . git commit -m ‘xxxx’ git push    git pull git checkout FenZhi git status    在swiper分支上提交并且push 本地切换到master分支:git chec">
+<meta name="description" content="写给自己 线上新建项目  线下：   1234567git initgit add .git commit -m &amp;apos;xxx&amp;apos;git remote add origin git@github.com:xxxxxxxx.gitgit branch --set-upstream-to=origin/master mastergit pull --allow-unrelated-his">
 <meta name="keywords" content="GIT,GITHUB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git笔记">
 <meta property="og:url" content="https://www.i7xy.cn/2018/09/20/Vscode的Git使用及记录/index.html">
 <meta property="og:site_name" content="前端私塾">
-<meta property="og:description" content="git init git remote add origin git@github.com:arleyGuoLei/Travel.git    git add . git commit -m ‘xxxx’ git push    git pull git checkout FenZhi git status    在swiper分支上提交并且push 本地切换到master分支:git chec">
+<meta property="og:description" content="写给自己 线上新建项目  线下：   1234567git initgit add .git commit -m &amp;apos;xxx&amp;apos;git remote add origin git@github.com:xxxxxxxx.gitgit branch --set-upstream-to=origin/master mastergit pull --allow-unrelated-his">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T11:46:22.406Z">
+<meta property="og:updated_time" content="2018-11-02T11:54:31.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git笔记">
-<meta name="twitter:description" content="git init git remote add origin git@github.com:arleyGuoLei/Travel.git    git add . git commit -m ‘xxxx’ git push    git pull git checkout FenZhi git status    在swiper分支上提交并且push 本地切换到master分支:git chec">
+<meta name="twitter:description" content="写给自己 线上新建项目  线下：   1234567git initgit add .git commit -m &amp;apos;xxx&amp;apos;git remote add origin git@github.com:xxxxxxxx.gitgit branch --set-upstream-to=origin/master mastergit pull --allow-unrelated-his">
 
 
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  523
+                  565
                 </span>
               
 
@@ -452,7 +452,16 @@
       
 
       
-        <ul>
+        <h4 id="写给自己"><a href="#写给自己" class="headerlink" title="写给自己"></a>写给自己</h4><ul>
+<li><p>线上新建项目</p>
+</li>
+<li><p>线下：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;xxx&apos;</span><br><span class="line"></span><br><span class="line">git remote add origin git@github.com:xxxxxxxx.git</span><br><span class="line">git branch --set-upstream-to=origin/master master</span><br><span class="line">git pull --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+<hr>
+<a id="more"></a>
+<ul>
 <li>git init</li>
 <li>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:arleyGuoLei/Travel.git</li>
 </ul>
@@ -488,7 +497,7 @@
 <li>提交代码:<code>git push</code></li>
 </ol>
 <hr>
-<h4 id="直接初始化某个项目"><a href="#直接初始化某个项目" class="headerlink" title="直接初始化某个项目"></a>直接初始化某个项目</h4><p> 1、在Git官网上点击New repository新建项目；<br> 2、在本地新建一个同名文件；<br> 3、打开git bash切换到新建的文件目录；<br> 4、echo “# myprojectname”&gt;&gt;README.md; //新建一个README文件并写入内容<br> 5、git init //git初始化<br> 6、git add .将全部文件添加到git中；git add README.md 将README文件单独添加<br> 7、git commit - m “first commit” //添加提交时的注释<br> 8、git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:xxxxxxxx.git //将git进行远程连线<br> 9、git push -u origin master //推代码更新fork仓库</p>
+<h4 id="直接初始化某个项目"><a href="#直接初始化某个项目" class="headerlink" title="直接初始化某个项目"></a>直接初始化某个项目</h4><p> 1、在Git官网上点击New repository新建项目；<br> 2、在本地新建一个同名文件；<br> 3、打开git bash切换到新建的文件目录；<br> 4、echo “# myprojectname”&gt;&gt;README.md; //新建一个README文件并写入内容<br> 5、git init //git初始化<br> 6、git add .将全部文件添加到git中；git add README.md 将README文件单独添加<br> 7、git commit - m “first commit” //添加提交时的注释<br> 8、git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:xxxxxxxx.git //将git进行远程连线<br> <!-- 9、git push -u origin master //推代码更新fork仓库 --><br> 9、git branch –set-upstream-to=origin/master master<br> 10、git pull –allow-unrelated-histories</p>
 <p>可能出现的错误</p>
 <p>1、fatal: remote origin already exists.//连线已经存在</p>
 <p> 解决方法：执行 git remote rm origin 将已存在的连接删除</p>
@@ -753,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">1.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接初始化某个项目"><span class="nav-number">2.</span> <span class="nav-text">直接初始化某个项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#写给自己"><span class="nav-number">1.</span> <span class="nav-text">写给自己</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接初始化某个项目"><span class="nav-number">3.</span> <span class="nav-text">直接初始化某个项目</span></a></li></ol></div>
             
 
           </div>
