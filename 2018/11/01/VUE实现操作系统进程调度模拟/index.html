@@ -90,7 +90,7 @@
 <meta property="og:description" content="《操作系统》课程综合性实验：用C语言（或其它语言，如Java）编程实现对N个进程采用某种进程调度算法（如动态优先权调度算法、先来先服务算法、短进程优先算法、时间片轮转调度算法）调度执行的模拟。 本项目由js(es6)实现了先来先服务,抢占式短进程优先以及时间片轮转调度算法,更多的内容等写实验报告之后在更新。先贴代码和学到的一些东西。 技术栈：JS(ES6),VUE(非模块化实践),Element-">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc6628d55da.png">
-<meta property="og:updated_time" content="2018-11-02T15:06:33.906Z">
+<meta property="og:updated_time" content="2018-11-05T13:25:27.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VUE实现操作系统进程调度模拟">
 <meta name="twitter:description" content="《操作系统》课程综合性实验：用C语言（或其它语言，如Java）编程实现对N个进程采用某种进程调度算法（如动态优先权调度算法、先来先服务算法、短进程优先算法、时间片轮转调度算法）调度执行的模拟。 本项目由js(es6)实现了先来先服务,抢占式短进程优先以及时间片轮转调度算法,更多的内容等写实验报告之后在更新。先贴代码和学到的一些东西。 技术栈：JS(ES6),VUE(非模块化实践),Element-">
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  386
+                  409
                 </span>
               
 
@@ -469,7 +469,9 @@
 <p>4.<code>\{\{\}\}</code> 换成 <code>v-text</code>，解决了线下和线上样式不匹配的问题。</p>
 <p>5.canvas标签上定义的width和height并不是可视高度和宽度,这个可以通过css设置,标签上设置的为画图时候的参考高度和宽度.</p>
 <p>代码托管于github,欢迎<code>Start</code>.<br>项目在线地址：<a href="https://github.com/arleyGuoLei/pcb" target="_blank" rel="noopener">https://github.com/arleyGuoLei/pcb</a></p>
-
+<p>5.vue加载渲染完之后,才显示页面</p>
+<p>v-cloak</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[v-cloak]</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
