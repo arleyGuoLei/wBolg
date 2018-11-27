@@ -801,7 +801,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  392
+                  1.1k
                 </span>
               
 
@@ -817,7 +817,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -874,6 +874,72 @@
 <li><p>数据库系统的三级模式中,表达物理数据库的是<strong>___</strong>。<br>A.外模式<br>B.模式<br>C.用户模式<br><code>D.内模式</code></p>
 </li>
 <li><p>要保证数据库的逻辑数据独立性,需要修改的是<strong>___</strong>。<br><code>A.模式与外模式之间的映射</code> B.模式<br>C.模式与内模式之间的映射 D.三级模式</p>
+</li>
+</ol>
+<h4 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h4><ol>
+<li>设某医院病房计算机管理中心需要输入如下信息:<br>科室:科名、科室地址、科室电话;<br>病房:病房号、病房状况、所属科室;<br>医生:姓名、职称、年龄、工号、科室;<br>病人:病历号、姓名、性别、诊断、住院时间</li>
+</ol>
+<p>其中一个科室有多个病房、多个医生,一个病房只能属于一个科室,一个医生只属于一个科室,但可以负责多名病人的诊治,一个病人的主管医生只有一个。</p>
+<p><img src="https://i.loli.net/2018/11/27/5bfd12b043355.png" alt="ER"></p>
+<ol start="2">
+<li>数据处理三层抽象</li>
+</ol>
+<ul>
+<li>概念层</li>
+<li>逻辑层</li>
+<li>物理层</li>
+</ul>
+<ol start="3">
+<li>数据模型组成要素</li>
+</ol>
+<ul>
+<li>数据结构</li>
+<li>数据操作</li>
+<li>数据的完整性约束条件</li>
+</ul>
+<ol start="4">
+<li><p>数据模型的三个组成要素中,不包括<strong>__</strong>。<br>A.完整性规则<br>B.数据结构<br>C.数据操作<br><code>D.并发控制</code></p>
+</li>
+<li><p>区分不同实体的依据是<strong>___</strong>。<br>A.名称<br><code>B.属性</code><br>C.对象<br>D.概念</p>
+</li>
+<li><p>数据库的概念模型独立于<strong>___</strong>。<br><code>A.具体的机器和DBMS</code> B.E-R图<br>C.信息世界 D.现实世界</p>
+</li>
+<li><p>作业题<br>P12 第1、2、3题<br>P26 第3、4题<br>P30 三、设计性实验 二选一</p>
+</li>
+</ol>
+<h4 id="第三章-关系模型与规范化理论"><a href="#第三章-关系模型与规范化理论" class="headerlink" title="第三章 关系模型与规范化理论"></a>第三章 关系模型与规范化理论</h4><ol>
+<li><p>一个关系只有一个<strong>___</strong>。<br>A.候选码<br>B.外码<br>C.码<br><code>D.主码</code></p>
+</li>
+<li><p>关系模型中,一个码是<strong>___</strong>组成。<br>A.可由多个任意属性<br>B.至多由一个属性<br><code>C.由一(多)个属性组成,其值唯一标识关系中一个元组</code><br>D.以上都不是</p>
+</li>
+<li><p>现有如下关系,下列<strong>_</strong>属于用户定义的完整性。<br>医疗(医生编号,医生姓名,患者编号,性别,诊断日期,诊断结果)<br>A.医生编号做主码<br><code>B.医生的姓名不能空</code><br>C.患者编号要与患者关系中的患者编号对应<br><code>D.性别只能取“男”或“女”</code></p>
+</li>
+<li><p>参加并运算的两个关系<strong>___</strong>。<br>A.属性个数可以不相同<br><code>B.属性个数、相应属性的域相同</code><br>C.一个关系的属性包含另一个关系的属性<br>D.属性名必须相同</p>
+</li>
+<li><p><img src="https://i.loli.net/2018/11/27/5bfd15bea2857.png" alt="3.5"></p>
+</li>
+</ol>
+<ul>
+<li><p>[练习1]查询选修了2号课程的学生的学号。<br><img src="https://i.loli.net/2018/11/27/5bfd167624362.png" alt="深度截图_选择区域_20181127180321"></p>
+</li>
+<li><p>[练习2]查询选修了2号课程的学生的姓名和系部。<br><img src="https://i.loli.net/2018/11/27/5bfd163d655db.png" alt="深度截图_选择区域_20181127180230"></p>
+</li>
+<li><p>[练习3]查询没选修2号课程的学生信息。<br><img src="https://i.loli.net/2018/11/27/5bfd177b8dde4.png" alt="深度截图_选择区域_20181127180749"></p>
+</li>
+<li><p>[练习4]查询同时选修2号课和3号课的学生学号。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2018/11/27/5bfd17c8efeac.png" alt="深度截图_选择区域_20181127180906"></p>
+<ol start="6">
+<li><p>查询选修了全部课程的学生的学号和姓名。<br><img src="https://i.loli.net/2018/11/27/5bfd19333925d.png" alt="深度截图_选择区域_20181127181505"></p>
+</li>
+<li><p>给定关系R和S如下<br><img src="https://i.loli.net/2018/11/27/5bfd198c0d19d.png" alt="深度截图_选择区域_20181127181633"></p>
+</li>
+<li><p><img src="https://i.loli.net/2018/11/27/5bfd19ec884ce.png" alt="深度截图_选择区域_20181127181810"></p>
+</li>
+<li><p>设有3个关系分别是S、C和SC,下面关系代数表达式是什么含义?<br><img src="https://i.loli.net/2018/11/27/5bfd1a5ae5e07.png" alt="深度截图_选择区域_20181127182002"></p>
+</li>
+<li><p>关系数据库规范化是为解决关系数据库中的<strong>___</strong>问题而引入的。<br><code>A.操作异常和数据冗余</code><br>B.提高查询速度<br>C.减少数据操作的复杂性<br>D.保证数据的安全性和完整性</p>
 </li>
 </ol>
 
@@ -2482,7 +2548,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.9k</span>
+    <span title="Site words total count">22.7k</span>
   
 </div>
 
