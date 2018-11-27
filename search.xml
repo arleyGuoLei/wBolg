@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据库Mysql期末复习]]></title>
+    <url>%2F2018%2F11%2F27%2F%E6%95%B0%E6%8D%AE%E5%BA%93Mysql%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[第一章 数据库(DB),数据库系统(DBS)和数据库管理系统(DBMS)之间的关系是()。A. DBS包括DB和DBMS B. DBMS包括DB和DBSC. DB包括DBS和DBMS D. DBS就是DB,也就是DBMS 下面列出的数据库管理技术发展的三个阶段中,没有专门的软件对数据进行管理的是( )。I.人工管理阶段 II.文件系统阶段 III.数据库阶段A.I 和 II B.只有 IIC.II 和 III D.只有 I 数据管理技术发展的三个阶段 人工管理阶段 文件系统阶段 数据库系统阶段(数据结构化、共享性高、独立性高;安全性、完整性好) 下列四项中,不属于数据库系统特点的是( ) 。A.数据共享 B.数据完整性C.数据冗余度高 D.数据独立性高 三级模式 :外模式、模式、内模式 二级映像 外模式/模式 - 逻辑 模式/内模式 - 物理 2种应用结构: C/S结构 B/S结构 用户或应用程序看到的那部分局部逻辑结构或特征的描述是___。A.模式B.物理模式C.外模式D.内模式 数据库系统的三级模式中,表达物理数据库的是___。A.外模式B.模式C.用户模式D.内模式 要保证数据库的逻辑数据独立性,需要修改的是___。A.模式与外模式之间的映射 B.模式C.模式与内模式之间的映射 D.三级模式]]></content>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[VUE实现操作系统进程调度模拟]]></title>
     <url>%2F2018%2F11%2F01%2FVUE%E5%AE%9E%E7%8E%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%A8%A1%E6%8B%9F%2F</url>
     <content type="text"><![CDATA[《操作系统》课程综合性实验：用C语言（或其它语言，如Java）编程实现对N个进程采用某种进程调度算法（如动态优先权调度算法、先来先服务算法、短进程优先算法、时间片轮转调度算法）调度执行的模拟。 本项目由js(es6)实现了先来先服务,抢占式短进程优先以及时间片轮转调度算法,更多的内容等写实验报告之后在更新。先贴代码和学到的一些东西。 技术栈：JS(ES6),VUE(非模块化实践),Element-ui 项目在线地址：https://www.i7xy.cn/code/PCB 线上项目vue和element-ui采用了cdn地址 1.对象拷贝 12// var m_process = process; // 这是直接复制地址... 必须用拷贝，这样复制的，如果修改m_process，原来的process也会受到影响var m_process = Object.assign(&#123;&#125;, process); // ES6的对象拷贝 2.解构赋值 1234[m_process.name, m_process.arriveTime, m_process.serviceTime] = processItem; //解构赋值，等同于下// m_process.name = processItem[0];// m_process.arriveTime = Number(processItem[1]);// m_process.serviceTime = Number(processItem[2]); 3.return返回多个内容，用解构赋值接收。 123456getAllProcess()&#123; return [m_allProcess, allTime];&#125;// 接收 ↓[this.allProcess, this.allTime] = this.getAllProcess(); 4.\{\{\}\} 换成 v-text，解决了线下和线上样式不匹配的问题。 5.canvas标签上定义的width和height并不是可视高度和宽度,这个可以通过css设置,标签上设置的为画图时候的参考高度和宽度. 代码托管于github,欢迎Start.项目在线地址：https://github.com/arleyGuoLei/pcb 5.vue加载渲染完之后,才显示页面 v-cloak https://cn.vuejs.org/v2/api/#v-cloak 123[v-cloak]&#123; display: none;&#125;]]></content>
@@ -8,8 +16,8 @@
         <category>VUE</category>
       </categories>
       <tags>
-        <tag>VUE</tag>
         <tag>ES6</tag>
+        <tag>VUE</tag>
       </tags>
   </entry>
   <entry>
