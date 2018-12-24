@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习笔记,面试," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.   由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析.    记录第一次java写小">
+<meta name="keywords" content="学习笔记,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="考研楼自动抢座 - Java">
+<meta property="og:url" content="https://www.i7xy.cn/2018/12/23/考研楼自动抢座-Java/index.html">
+<meta property="og:site_name" content="前端私塾">
+<meta property="og:description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.   由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析.    记录第一次java写小">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2018/12/23/5c1f924e43a26.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/24/5c20cc2872714.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/24/5c20ce9eb44c5.png">
+<meta property="og:updated_time" content="2018-12-24T12:43:11.231Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="考研楼自动抢座 - Java">
+<meta name="twitter:description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.   由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析.    记录第一次java写小">
+<meta name="twitter:image" content="https://i.loli.net/2018/12/23/5c1f924e43a26.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.i7xy.cn/2018/12/23/考研楼自动抢座-Java/"/>
+
+
+
+
+
+  <title>考研楼自动抢座 - Java | 前端私塾</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?96d5ffc2ce5477349cf387fdc834a54f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端私塾</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">前端就该这么学</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2018/12/23/考研楼自动抢座-Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arley (郭磊)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端私塾">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">考研楼自动抢座 - Java</h2>
+        
+
+        <div class="post-meta">
+         
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T21:05:34+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/23/考研楼自动抢座-Java/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/12/23/考研楼自动抢座-Java/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/23/考研楼自动抢座-Java/" class="leancloud_visitors" data-flag-title="考研楼自动抢座 - Java">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本篇日志为记录<code>第一次用java写HTTP相关的小工具</code>,这学期学完了java课程,由于最近在忙<code>vue</code>的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个<code>抢座</code>的http请求工具,实现自动抢座.</p>
+<ul>
+<li><ol>
+<li>由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是<code>第一批</code>抢到了资格的,所以可以靠这类账号去抓包分析.</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>记录第一次<code>java</code>写小工具,我会描述怎么找资源,怎么避免重复造轮,快速实现开发.</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>至今,有很多的爬虫经验,又本着深入前端开发路线走了很长一段路,所以对抓包分析,浏览器开发工具等一系列的更加熟悉,感受一下自己的技术.</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>记录了<code>跨域</code>和<code>如何用一门语言实现从来没用本语言实现过的功能</code><a id="more"></a>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><ol>
+<li>学校的抢座网站其实还算不错,前端代码放在一个服务器,后端接口放在了另外一个服务器,所以也就有了需要跨域一说(学校没做<code>CORS</code>以及任何跨域处理,导致PC端不能正常访问,学校肯定是故意的,对.)</li>
+</ol>
+<h5 id="对跨越的理解"><a href="#对跨越的理解" class="headerlink" title="对跨越的理解"></a>对跨越的理解</h5><blockquote>
+<p>跨域在我看来主要是指:<code>PC端浏览器</code>对不同源访问的访问拦截…听不懂,没关系,看到<code>PC</code>两字,也就胜利一半了;详细的是这样的:当前端网页发起一个请求后,后端返回请求信息,重点在<code>响应头</code> ~ 当请求的源地址<code>请求头 - orgin</code>,也就是俗称打开当前网站的链接,比如打开<code>A</code>(<a href="http://www.a.com),然后`A`的数据来源是去发送`GET或POST等`HTTP请求到`B`(api.b.com)来获取数据,在后端没设置响应头`(允许某些网址获取数据的Access-Control-Allow-Origin)`,所以PC端浏览器就对这类操作进行了拦截,预请求option被拦截,真实的请求将不在发送" target="_blank" rel="noopener">www.a.com),然后`A`的数据来源是去发送`GET或POST等`HTTP请求到`B`(api.b.com)来获取数据,在后端没设置响应头`(允许某些网址获取数据的Access-Control-Allow-Origin)`,所以PC端浏览器就对这类操作进行了拦截,预请求option被拦截,真实的请求将不在发送</a>.</p>
+</blockquote>
+<p>PHP代码如下,俗称<code>CROS</code>方式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">'Access-Control-Allow-Origin:*'</span>);  <span class="comment">//支持全域名访问，不安全，部署后需要固定限制为客户端网址</span></span><br><span class="line">header(<span class="string">'Access-Control-Allow-Methods:POST,GET,OPTIONS,DELETE'</span>); <span class="comment">//支持的http 动作</span></span><br><span class="line">header(<span class="string">'Access-Control-Allow-Headers:x-requested-with,content-type'</span>);  <span class="comment">//允许请求头携带的名字</span></span><br></pre></td></tr></table></figure></p>
+<p>回到我们的故事上来,由于学校不允许跨域请求,所以<code>得抓手机的包</code>??? 当然<code>fiddler</code>也方便,但没必要,看操作 - <code>设置浏览器允许跨域,不拦截非同源请求</code>,方法很简单,运行浏览器的时候,带上参数<code>--disable-web-security</code>,附上我的系统打开浏览器的方式,这样谷歌就不会拦截跨域请求了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/google/chrome/google-chrome  --disable-web-security --user-data-dir=/media/arley/Work/chrome</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2018/12/23/5c1f924e43a26.png" alt="跨域"></p>
+<ol start="2">
+<li>由于没用java弄过<code>http</code>请求,第一步当然是找怎么写代码喽??? 不,我觉得吧,如果是为了需求去开发一个小工具,没必要原生写法了,咱们又不是<code>新手</code>,第一步当然是<code>github</code>上搜索<code>http</code>,然后语言选择<code>java</code>喽,然后按照star排序,于是乎,找到<code>kevinsawicki/http-request</code> <a href="https://github.com/kevinsawicki/http-request" target="_blank" rel="noopener">go-&gt;github</a> </li>
+</ol>
+<p><img src="https://i.loli.net/2018/12/24/5c20cc2872714.png" alt="request"></p>
+<p>为什么选这个呢?</p>
+<ol>
+<li>搜索需要的关键词,,,, 如果你不知道关键字,建议跳过这一步,<code>you ought to get a K!</code></li>
+<li>选择自己使用的语言 , 比如此案例的<code>java</code></li>
+<li>按照匹配度或者<code>star</code>选一个就ok了</li>
+</ol>
+<p>具体使用方法,像这一种用的人多的框架或者算是库吧,先看github的<code>readme</code>介绍,遇到问题了,不要着急百度,先看<code>issues</code>,能踩的坑,已经被前人填平.比如:</p>
+<p><img src="https://i.loli.net/2018/12/24/5c20ce9eb44c5.png" alt="issues"></p>
+<ol start="3">
+<li>在编码过程中,发现java对json格式的原生操作好像很弱,于是乎,进行了<code>github</code>的一波操作.<br>找了<code>fastjson</code> By<code>alibaba</code></li>
+</ol>
+<h4 id="编码部分正式开始"><a href="#编码部分正式开始" class="headerlink" title="编码部分正式开始"></a>编码部分正式开始</h4><blockquote>
+<p>由于这个文章并不是用来记录代码,代码也不会外发等原因,得保证明年或者以后学校抢座秩序的运营嘛~ 所以代码只发布部分,并且参数去掉部分.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> login = <span class="keyword">false</span>;</span><br><span class="line">    String authorizationData;</span><br><span class="line">    String Authorization;</span><br><span class="line">    String baseUrl = <span class="string">"http://www.baidu.com"</span>;</span><br><span class="line">    String token_type;</span><br><span class="line">    String access_token;</span><br><span class="line">    <span class="keyword">boolean</span> staticSeat = <span class="keyword">false</span>;</span><br><span class="line">    String needSeat;</span><br><span class="line">    String name;</span><br><span class="line">    ArrayList P =  <span class="keyword">new</span> ArrayList();</span><br><span class="line">    ArrayList seat =  <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    User(String username,String password,<span class="keyword">boolean</span> staticSeat,String needSeat) &#123;</span><br><span class="line">        <span class="keyword">this</span>.staticSeat = staticSeat;</span><br><span class="line">        <span class="keyword">this</span>.needSeat = needSeat;</span><br><span class="line">        Map&lt;String, String&gt; data = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">        data.put(<span class="string">"grant_type"</span>, <span class="string">"grant_type"</span>);</span><br><span class="line">        data.put(<span class="string">"username"</span>, username);</span><br><span class="line">        data.put(<span class="string">"password"</span>, password);</span><br><span class="line">        data.put(<span class="string">"client_id"</span>, <span class="string">"srclient_idms_xgc"</span>);</span><br><span class="line">        data.put(<span class="string">"client_secret"</span>, <span class="string">"client_secret"</span>);</span><br><span class="line">        String res = HttpRequest.post(baseUrl + <span class="string">"/token"</span>).form(data).body();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            authorizationData = res;</span><br><span class="line">            name = getSubString(res, <span class="string">"\"true_name\":\""</span>, <span class="string">"\""</span>);</span><br><span class="line">            token_type = getSubString(res, <span class="string">"\"token_type\":\""</span>, <span class="string">"\""</span>);</span><br><span class="line">            access_token = getSubString(res, <span class="string">"\"access_token\":\""</span>, <span class="string">"\""</span>);</span><br><span class="line">            Authorization = token_type + <span class="string">" "</span> + access_token;</span><br><span class="line">            <span class="keyword">if</span> (!name.isEmpty() &amp;&amp; !res.contains(<span class="string">"学号或密码错误"</span>) &amp;&amp; name.length()&lt;<span class="number">20</span> &amp;&amp; name.length()&gt;<span class="number">1</span>) &#123;</span><br><span class="line">                System.out.println(<span class="string">"登录成功:"</span> + name);</span><br><span class="line">                login = <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(res);</span><br><span class="line">                login = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (NullPointerException e)&#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">login</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> login;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getOneseat</span><span class="params">(String seat)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!login)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Map&lt;String, String&gt; data = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">        data.put(<span class="string">"grant_type"</span>, <span class="string">"password"</span>);</span><br><span class="line"></span><br><span class="line">        String response = HttpRequest.post(baseUrl + <span class="string">"/api/order/postorder/"</span>+seat)</span><br><span class="line">                .header(<span class="string">"Authorization"</span>, <span class="keyword">this</span>.Authorization)</span><br><span class="line">                .form(data)</span><br><span class="line">                .body();</span><br><span class="line">        JSONObject jsonObject = JSON.parseObject(response);</span><br><span class="line"></span><br><span class="line">        JSONObject json = JSON.parseObject(jsonObject.getString(<span class="string">"data"</span>));</span><br><span class="line">        String SeatId = json.getString(<span class="string">"SeatId"</span>);</span><br><span class="line">        <span class="keyword">if</span>(!SeatId.isEmpty())&#123;</span><br><span class="line">                System.out.println(<span class="string">"抢到座位:"</span>+SeatId);</span><br><span class="line"><span class="comment">//                System.exit(0); //不退出基本能保证抢到</span></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>((staticSeat) &amp;&amp; (seat.equals(needSeat)))&#123;</span><br><span class="line">            getzone();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getseats</span><span class="params">(String P)</span></span>&#123;</span><br><span class="line">        String response = HttpRequest.get(baseUrl + <span class="string">"/api/seat/getseat/"</span>+P)</span><br><span class="line">                .header(<span class="string">"Authorization"</span>, <span class="keyword">this</span>.Authorization)</span><br><span class="line">                .body();</span><br><span class="line">        JSONObject jsonObject = JSON.parseObject(response);</span><br><span class="line"><span class="comment">//        System.out.println(response);</span></span><br><span class="line">        <span class="keyword">for</span> (Object obj : jsonObject.getJSONArray(<span class="string">"seat"</span>)) &#123;</span><br><span class="line">            JSONObject item = (JSONObject) obj;</span><br><span class="line">            <span class="keyword">if</span>(item.getString(<span class="string">"Status"</span>)==<span class="string">"false"</span>)&#123;</span><br><span class="line">                String s = item.getString(<span class="string">"Id"</span>);</span><br><span class="line">                seat.add(s);</span><br><span class="line">                System.out.println(<span class="string">"空座位："</span>+s);</span><br><span class="line">                getOneseat(s);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getzone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!login)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String response = HttpRequest.get(baseUrl + <span class="string">"/api/seat/getzone/P"</span>)</span><br><span class="line">                .header(<span class="string">"Authorization"</span>, <span class="keyword">this</span>.Authorization)</span><br><span class="line">                .body();</span><br><span class="line">        System.out.println(<span class="string">"#####################"</span>);</span><br><span class="line">        System.out.println(<span class="string">"教室信息："</span>);</span><br><span class="line">        String maxP= <span class="string">""</span> ;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        JSONObject jsonObject = JSON.parseObject(response);</span><br><span class="line">        <span class="keyword">for</span> (Object obj : jsonObject.getJSONArray(<span class="string">"zone"</span>)) &#123;</span><br><span class="line">            JSONObject item = (JSONObject) obj;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(max &lt; Integer.parseInt(item.getString(<span class="string">"count"</span>)))&#123;</span><br><span class="line">                maxP = item.getString(<span class="string">"flag"</span>);</span><br><span class="line">                max = Integer.parseInt(item.getString(<span class="string">"count"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(item.getString(<span class="string">"name"</span>) + <span class="string">" -- "</span> +item.getString(<span class="string">"count"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(maxP!=<span class="string">""</span> &amp;&amp; max!=<span class="number">0</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"#####################"</span>);</span><br><span class="line">            System.out.println(<span class="string">"最多的教室为："</span> + maxP +<span class="string">",共剩余座位："</span>+max+<span class="string">" - 开抢!"</span>);</span><br><span class="line">            getseats(maxP);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"没座位了!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 取消预约</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">Cancel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Map&lt;String, String&gt; data = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">        data.put(<span class="string">"grant_type"</span>, <span class="string">"password"</span>);</span><br><span class="line">        String res = HttpRequest.post(baseUrl + <span class="string">"/api/order/postcancel"</span>)</span><br><span class="line">                .header(<span class="string">"Authorization"</span>, <span class="keyword">this</span>.Authorization)</span><br><span class="line">                .form(data)</span><br><span class="line">                .body();</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 取两个文本之间的文本值</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> text</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> left</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> right</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getSubString</span><span class="params">(String text, String left, String right)</span> </span>&#123;</span><br><span class="line">        String result = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> zLen;</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="keyword">null</span> || left.isEmpty()) &#123;</span><br><span class="line">            zLen = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            zLen = text.indexOf(left);</span><br><span class="line">            <span class="keyword">if</span> (zLen &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">                zLen += left.length();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                zLen = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> yLen = text.indexOf(right, zLen);</span><br><span class="line">        <span class="keyword">if</span> (yLen &lt; <span class="number">0</span> || right == <span class="keyword">null</span> || right.isEmpty()) &#123;</span><br><span class="line">            yLen = text.length();</span><br><span class="line">        &#125;</span><br><span class="line">        result = text.substring(zLen, yLen);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本来是多线程的,时间不允许...</span></span><br><span class="line"><span class="keyword">import</span> java.util.TimerTask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">1</span>!=<span class="number">1</span>)&#123;</span><br><span class="line">            STU(<span class="string">"账号"</span>, <span class="string">"密码"</span>, <span class="keyword">true</span>, <span class="string">"Pxxx-0xx"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            STU(<span class="string">"账号"</span>, <span class="string">"密码"</span>, <span class="keyword">false</span>, <span class="string">"Pxxx-0xx"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">STU</span><span class="params">(String username, String password, <span class="keyword">boolean</span> staticSeat, String needSeat)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> java.util.Timer().schedule(<span class="keyword">new</span> TimerTask() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">boolean</span> tmp = <span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">do</span> &#123;</span><br><span class="line">                    User user = <span class="keyword">new</span> User(username, password, staticSeat, needSeat);</span><br><span class="line">                    tmp = user.login();</span><br><span class="line">                    <span class="keyword">if</span> (staticSeat) &#123;</span><br><span class="line">                        user.getOneseat(needSeat);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">                        user.getzone();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">while</span> (!tmp);</span><br><span class="line">                System.out.println(<span class="string">"----------"</span>);</span><br><span class="line"><span class="comment">////                this.cancel();</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="number">500</span>,<span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><blockquote>
+<p>好了,这个是战争结束之后回来写的<br>怎么说呢,软件不一定有人好使,还有这个抢座是真的恐怖,估计也就30s都没有,座位就没了吧.30s之中我做了程序是这样的:抢了将近20s,本来感觉没希望了,最后惊喜 -&gt; get A seat ,故事结束???有幸有座位学习???不不不.<br>由于在做分析的时候,用的是同学的账号,然后…很是惭愧,把他座位搞丢了,取消了预约之后,就再没登上过他的号,所以,抢到的这个我的实名座位,只希望能实名转到他的户口下…以弥补我的失身之则… 恩,这个算是记录一次自己的实战,代码也不全发,抢座逻辑也很简单,如下:<br>固定抢座和不固定,固定抢座就登录加一个座位号的包,然后over. 不固定抢座,先获取所有教室座位剩余数量,选择最多的那个教室开始循环,发包获取有空位的座位.<br>感谢java.本篇文章主要做<code>对如何使用自己学习了基础的语言</code>进行一次实战开发,既然大学里面学了<code>基础</code>,我觉得吧,师傅领进门之后的后续学习,找到代码里面的乐趣和经验,只有靠<code>练习和投入</code>,对,就是这样.</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="Arley (郭磊) wechat" style="width: 200px; max-width: 100%;"/>
+    <div>我的微信订阅号</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>觉得有帮助，请博主喝杯奶茶，一起学习～</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wxpay.png" alt="Arley (郭磊) 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Arley (郭磊) 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/01/VUE实现操作系统进程调度模拟/" rel="next" title="VUE实现操作系统进程调度模拟">
+                <i class="fa fa-chevron-left"></i> VUE实现操作系统进程调度模拟
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Arley (郭磊)" />
+            
+              <p class="site-author-name" itemprop="name">Arley (郭磊)</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/arleyGuoLei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:34805850@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/arley_5bc32c4b358c6" target="_blank" title="segmentfault">
+                      
+                        <i class="fa fa-fw fa-flag"></i>segmentfault</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5bcadd8251882556b3589211" target="_blank" title="jueJin">
+                      
+                        <i class="fa fa-fw fa-battery-4"></i>jueJin</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#正文"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对跨越的理解"><span class="nav-number">1.1.</span> <span class="nav-text">对跨越的理解</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码部分正式开始"><span class="nav-number">2.</span> <span class="nav-text">编码部分正式开始</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arley (郭磊)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">23.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+  <div class="footer-custom">Hosted by <a href="https://pages.coding.me" target="_blank">Coding Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/three.js/r83/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://arley.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.i7xy.cn/2018/12/23/考研楼自动抢座-Java/';
+          this.page.identifier = '2018/12/23/考研楼自动抢座-Java/';
+          this.page.title = '考研楼自动抢座 - Java';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://arley.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("emuGzvJAzJbGKgXCVS0Jdi8I-gzGzoHsz", "k6yKHzE30fMkuqxoqbbCMlnr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -70,7 +70,6 @@
 
 
 
-  <meta name="keywords" content="JS," />
 
 
 
@@ -80,19 +79,17 @@
 
 
 
-
-<meta name="description" content="一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但闭包利用一个技巧，让作用域里面的变量，在函数执行完之后依旧保存没有被垃圾回收处理掉。">
-<meta name="keywords" content="JS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Js闭包">
-<meta property="og:url" content="https://www.i7xy.cn/2018/10/18/Js闭包/index.html">
+<meta name="description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
+<meta name="keywords" content="前端私塾，前端博客，郭磊，arley">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端私塾">
+<meta property="og:url" content="https://www.i7xy.cn/tags/学习笔记/page/2/index.html">
 <meta property="og:site_name" content="前端私塾">
-<meta property="og:description" content="一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但闭包利用一个技巧，让作用域里面的变量，在函数执行完之后依旧保存没有被垃圾回收处理掉。">
+<meta property="og:description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-18T13:54:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Js闭包">
-<meta name="twitter:description" content="一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但闭包利用一个技巧，让作用域里面的变量，在函数执行完之后依旧保存没有被垃圾回收处理掉。">
+<meta name="twitter:title" content="前端私塾">
+<meta name="twitter:description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://www.i7xy.cn/2018/10/18/Js闭包/"/>
+  <link rel="canonical" href="https://www.i7xy.cn/tags/学习笔记/page/2/"/>
 
 
 
 
 
-  <title>Js闭包 | 前端私塾</title>
+  <title>标签: 学习笔记 | 前端私塾</title>
   
 
 
@@ -157,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -295,281 +292,58 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>学习笔记<small>标签</small>
+        </h2>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2018/10/18/Js闭包/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Arley (郭磊)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端私塾">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
+            <a class="post-title-link" href="/2018/09/19/VUE组件之间传值整理/" itemprop="url">
+              
+                <span itemprop="name">VUE组件之间传值整理</span>
+              
+            </a>
         
-          <h2 class="post-title" itemprop="name headline">Js闭包</h2>
-        
+      </h3>
 
-        <div class="post-meta">
-         
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T21:15:31+08:00">
-                2018-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/18/Js闭包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/18/Js闭包/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/10/18/Js闭包/" class="leancloud_visitors" data-flag-title="Js闭包">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  525
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但闭包利用一个技巧，让作用域里面的变量，在函数执行完之后依旧保存没有被垃圾回收处理掉。</p>
-<a id="more"></a>
-<ul>
-<li>例1</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> inner;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> abc = outer();</span><br><span class="line"><span class="comment">//outer()只要执行过，就有了引用函数内部变量的可能，然后就会被保存在内存中；</span></span><br><span class="line"><span class="comment">//outer()如果没有执行过，由于作用域的关系，看不到内部作用域，更不会被保存在内存中了；</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(abc());<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(abc());<span class="comment">//2</span></span><br><span class="line"><span class="comment">//因为a已经在内存中了，所以再次执行abc()的时候，是在第一次的基础上累加的</span></span><br><span class="line"></span><br><span class="line">abc = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">//由于闭包占用内存空间，所以要谨慎使用闭包。尽量在使用完闭包后，及时解除引用，释放内存；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 直接返回函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(t++);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = outer2();</span><br><span class="line">a();<span class="comment">//1</span></span><br><span class="line">a();<span class="comment">//2</span></span><br><span class="line">a();<span class="comment">//3</span></span><br><span class="line">a = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>例2</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert((tmp++));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = foo(<span class="number">1</span>); <span class="comment">// bar 现在是一个闭包</span></span><br><span class="line">bar();<span class="comment">//1</span></span><br><span class="line">bar();<span class="comment">//2</span></span><br><span class="line">bar();<span class="comment">//3</span></span><br><span class="line">bar();<span class="comment">//4</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>例3</li>
-</ul>
-<blockquote>
-<p>闭包混入立即执行函数</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btnList = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"btn"</span>),</span><br><span class="line">  len = btnList.length;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;</span><br><span class="line">    btnList[j].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"第"</span> + j + <span class="string">"个按钮被点击到了"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这又哪里产生了闭包了。别急，我们一个个分析。for循环每一次都执行一个 IIEF （自执行函数），每一次变量 i 被当做参数传到IIEF中去 ， 那么这个自执行函数中创建了一个变量，参数 j 然后元素节点 btnList 绑定一个onclick事件，执行函数里面需要用到这个参数 j ，但是你又没点 ， 那么这个遍历 j 就没有被清理 ， 就一直在参数里面被保存着 ， 每一个IIEF都做一样的事情 ， 所以这个时候就产生了闭包 ， 变量 j 并没有被回收，依然在等待你使用。</p>
-
-      
-    </div>
-    
-    
-    
-
-    
-      <div>
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="Arley (郭磊) wechat" style="width: 200px; max-width: 100%;"/>
-    <div>我的微信订阅号</div>
-</div>
-
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-19T18:50:47+08:00"
+              content="2018-09-19" >
+          09-19
+        </time>
       </div>
-    
 
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>觉得有帮助，请博主喝杯奶茶，一起学习～</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wxpay.png" alt="Arley (郭磊) 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="Arley (郭磊) 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/JS/" rel="tag"># JS</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/10/18/Js面试题整理/" rel="next" title="Js面试题整理">
-                <i class="fa fa-chevron-left"></i> Js面试题整理
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/19/一些小前端DEMO/" rel="prev" title="一些小前端DEMO">
-                一些小前端DEMO <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/tags/学习笔记/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/tags/学习笔记/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -577,20 +351,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -875,10 +635,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
@@ -896,18 +652,6 @@
       <script id="dsq-count-scr" src="https://arley.disqus.com/count.js" async></script>
     
 
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://www.i7xy.cn/2018/10/18/Js闭包/';
-          this.page.identifier = '2018/10/18/Js闭包/';
-          this.page.title = 'Js闭包';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://arley.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
     
 
   
