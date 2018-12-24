@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.   由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析.    记录第一次java写小">
+<meta name="description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.  由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析. 记录第一次java写小工具,我">
 <meta name="keywords" content="学习笔记,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="考研楼自动抢座 - Java">
 <meta property="og:url" content="https://www.i7xy.cn/2018/12/23/考研楼自动抢座-Java/index.html">
 <meta property="og:site_name" content="前端私塾">
-<meta property="og:description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.   由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析.    记录第一次java写小">
+<meta property="og:description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.  由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析. 记录第一次java写小工具,我">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/12/23/5c1f924e43a26.png">
 <meta property="og:image" content="https://i.loli.net/2018/12/24/5c20cc2872714.png">
 <meta property="og:image" content="https://i.loli.net/2018/12/24/5c20ce9eb44c5.png">
-<meta property="og:updated_time" content="2018-12-24T12:43:11.231Z">
+<meta property="og:updated_time" content="2018-12-24T12:45:59.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="考研楼自动抢座 - Java">
-<meta name="twitter:description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.   由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析.    记录第一次java写小">
+<meta name="twitter:description" content="本篇日志为记录第一次用java写HTTP相关的小工具,这学期学完了java课程,由于最近在忙vue的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个抢座的http请求工具,实现自动抢座.  由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是第一批抢到了资格的,所以可以靠这类账号去抓包分析. 记录第一次java写小工具,我">
 <meta name="twitter:image" content="https://i.loli.net/2018/12/23/5c1f924e43a26.png">
 
 
@@ -457,25 +457,15 @@
 
       
         <p>本篇日志为记录<code>第一次用java写HTTP相关的小工具</code>,这学期学完了java课程,由于最近在忙<code>vue</code>的完整项目,所以基本没用java做过啥成品,本着学习的精神和几小时的闲暇时间,成品一个<code>抢座</code>的http请求工具,实现自动抢座.</p>
-<ul>
-<li><ol>
+<ol>
 <li>由于本校考研楼和其他学校基本一样,都得靠抢,在明天(也就是今天),开放抢座;又有一部分账号是<code>第一批</code>抢到了资格的,所以可以靠这类账号去抓包分析.</li>
-</ol>
-</li>
-<li><ol start="2">
 <li>记录第一次<code>java</code>写小工具,我会描述怎么找资源,怎么避免重复造轮,快速实现开发.</li>
-</ol>
+<li><p>至今,有很多的爬虫经验,又本着深入前端开发路线走了很长一段路,所以对抓包分析,浏览器开发工具等一系列的更加熟悉,感受一下自己的技术.</p>
 </li>
-<li><ol start="3">
-<li>至今,有很多的爬虫经验,又本着深入前端开发路线走了很长一段路,所以对抓包分析,浏览器开发工具等一系列的更加熟悉,感受一下自己的技术.</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>记录了<code>跨域</code>和<code>如何用一门语言实现从来没用本语言实现过的功能</code><a id="more"></a>
+<li><p>记录了<code>跨域</code>和<code>如何用一门语言实现从来没用本语言实现过的功能</code></p>
+<a id="more"></a>
 </li>
 </ol>
-</li>
-</ul>
 <h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><ol>
 <li>学校的抢座网站其实还算不错,前端代码放在一个服务器,后端接口放在了另外一个服务器,所以也就有了需要跨域一说(学校没做<code>CORS</code>以及任何跨域处理,导致PC端不能正常访问,学校肯定是故意的,对.)</li>
 </ol>
