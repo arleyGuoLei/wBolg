@@ -70,7 +70,6 @@
 
 
 
-  <meta name="keywords" content="学习笔记,VUE," />
 
 
 
@@ -80,19 +79,17 @@
 
 
 
-
-<meta name="description" content="1 使用组件的细节点1.is属性  ul/ol(li),table(tr)&amp;lt;li is=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;  2.自定义组件的data必须是一个函数 3.ref的使用  获取元素dom  计数器例子 1.Vue.component2.this.$emit(‘change’)3.@change=(“函数名”)  12345678910111213141">
-<meta name="keywords" content="学习笔记,VUE">
-<meta property="og:type" content="article">
-<meta property="og:title" content="VUE组件之间传值整理">
-<meta property="og:url" content="https://www.i7xy.cn/2018/09/19/VUE组件之间传值整理/index.html">
+<meta name="description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
+<meta name="keywords" content="前端私塾，前端博客，郭磊，arley">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端私塾">
+<meta property="og:url" content="https://www.i7xy.cn/page/3/index.html">
 <meta property="og:site_name" content="前端私塾">
-<meta property="og:description" content="1 使用组件的细节点1.is属性  ul/ol(li),table(tr)&amp;lt;li is=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;  2.自定义组件的data必须是一个函数 3.ref的使用  获取元素dom  计数器例子 1.Vue.component2.this.$emit(‘change’)3.@change=(“函数名”)  12345678910111213141">
+<meta property="og:description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-22T12:47:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VUE组件之间传值整理">
-<meta name="twitter:description" content="1 使用组件的细节点1.is属性  ul/ol(li),table(tr)&amp;lt;li is=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/li&amp;gt;  2.自定义组件的data必须是一个函数 3.ref的使用  获取元素dom  计数器例子 1.Vue.component2.this.$emit(‘change’)3.@change=(“函数名”)  12345678910111213141">
+<meta name="twitter:title" content="前端私塾">
+<meta name="twitter:description" content="前端私塾，一个前端私客的开放式学习私塾；也就是一个前端博客了，记录郭磊（arley）的成长学习，也为了帮助同道兴趣者，为大家为自己留下一些东西。">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://www.i7xy.cn/2018/09/19/VUE组件之间传值整理/"/>
+  <link rel="canonical" href="https://www.i7xy.cn/page/3/"/>
 
 
 
 
 
-  <title>VUE组件之间传值整理 | 前端私塾</title>
+  <title>前端私塾</title>
   
 
 
@@ -157,7 +154,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -294,9 +292,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -326,7 +324,9 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">VUE组件之间传值整理</h2>
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/19/VUE组件之间传值整理/" itemprop="url">VUE组件之间传值整理</a></h2>
         
 
         <div class="post-meta">
@@ -452,7 +452,9 @@
       
 
       
-        <h4 id="1-使用组件的细节点"><a href="#1-使用组件的细节点" class="headerlink" title="1 使用组件的细节点"></a>1 使用组件的细节点</h4><p>1.is属性</p>
+        
+          
+            <h4 id="1-使用组件的细节点"><a href="#1-使用组件的细节点" class="headerlink" title="1 使用组件的细节点"></a>1 使用组件的细节点</h4><p>1.is属性</p>
 <blockquote>
 <p>ul/ol(li),table(tr)<br><code>&lt;li is=&quot;xxx&quot;&gt;&lt;/li&gt;</code></p>
 </blockquote>
@@ -521,6 +523,8 @@
 </blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body-content</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"props"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;props.item&#125;&#125; -- hello<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body-content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    Vue.component(<span class="string">'body-content'</span>, &#123;</span></span><br><span class="line"><span class="javascript">        data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">                list: [1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        template: `</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">slot</span> <span class="attr">v-for</span>=<span class="string">"item in list"</span> <span class="attr">:item</span>=<span class="string">item</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="undefined">        `</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#root'</span></span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="8-动态组件与-v-once-指令"><a href="#8-动态组件与-v-once-指令" class="headerlink" title="8 动态组件与 v-once 指令"></a>8 动态组件与 v-once 指令</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>插槽<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 写法1 low --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;body-content-one v-if="type==='body-content-one'"&gt;&lt;/body-content-one&gt;</span></span><br><span class="line"><span class="comment">        &lt;body-content-two v-if="type==='body-content-two'"&gt;&lt;/body-content-two&gt; --&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!-- 直接根据 is的属性赋值模板 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"type"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"切换"</span> @<span class="attr">click</span>=<span class="string">"change"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// v-once 能把组件保存在内容,第一次渲染之后不用再次渲染</span></span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'body-content-one'</span>, &#123;</span></span><br><span class="line"><span class="xml">            template: "<span class="tag">&lt;<span class="name">div</span> <span class="attr">v-once</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span>"</span></span><br><span class="line"><span class="undefined">            </span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'body-content-two'</span>, &#123;</span></span><br><span class="line"><span class="xml">            template: "<span class="tag">&lt;<span class="name">div</span> <span class="attr">v-once</span>&gt;</span>two<span class="tag">&lt;/<span class="name">div</span>&gt;</span>"</span></span><br><span class="line"><span class="undefined">            </span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#root'</span>,</span></span><br><span class="line"><span class="undefined">            data:&#123;</span></span><br><span class="line"><span class="javascript">              type:<span class="string">'body-content-one'</span>  </span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            methods:&#123;</span></span><br><span class="line"><span class="javascript">                change:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.type = (<span class="keyword">this</span>.type===<span class="string">'body-content-one'</span>?<span class="string">'body-content-two'</span>:<span class="string">'body-content-one'</span>);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          
+        
       
     </div>
     
@@ -528,82 +532,21 @@
     
 
     
-      <div>
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="Arley (郭磊) wechat" style="width: 200px; max-width: 100%;"/>
-    <div>我的微信订阅号</div>
-</div>
 
-      </div>
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>觉得有帮助，请博主喝杯奶茶，一起学习～</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wxpay.png" alt="Arley (郭磊) 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="Arley (郭磊) 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
-          
-            <a href="/tags/VUE/" rel="tag"># VUE</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/20/VUE中的动画特效/" rel="prev" title="Vue中的动画特效">
-                Vue中的动画特效 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -613,11 +556,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -625,20 +571,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -659,17 +591,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -761,22 +684,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用组件的细节点"><span class="nav-number">1.</span> <span class="nav-text">1 使用组件的细节点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计数器例子"><span class="nav-number">1.1.</span> <span class="nav-text">计数器例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-父子组件间的数据传递"><span class="nav-number">2.</span> <span class="nav-text">2 父子组件间的数据传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计数器2"><span class="nav-number">2.1.</span> <span class="nav-text">计数器2</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-组件参数校验以及非Props特性"><span class="nav-number">3.</span> <span class="nav-text">3 组件参数校验以及非Props特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-给组件绑定原生事件"><span class="nav-number">4.</span> <span class="nav-text">4 给组件绑定原生事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-非父子组件之间的传值问题"><span class="nav-number">5.</span> <span class="nav-text">5 非父子组件之间的传值问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-插槽-slot"><span class="nav-number">6.</span> <span class="nav-text">6 插槽(slot)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-作用域插槽"><span class="nav-number">7.</span> <span class="nav-text">7 作用域插槽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-动态组件与-v-once-指令"><span class="nav-number">8.</span> <span class="nav-text">8 动态组件与 v-once 指令</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -948,10 +855,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
@@ -969,18 +872,6 @@
       <script id="dsq-count-scr" src="https://arley.disqus.com/count.js" async></script>
     
 
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://www.i7xy.cn/2018/09/19/VUE组件之间传值整理/';
-          this.page.identifier = '2018/09/19/VUE组件之间传值整理/';
-          this.page.title = 'VUE组件之间传值整理';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://arley.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
     
 
   
