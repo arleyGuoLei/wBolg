@@ -715,6 +715,269 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2019/01/13/1-js初级面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arley (郭磊)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端私塾">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/13/1-js初级面试题/" itemprop="url">1.js初级面试题</a></h2>
+        
+
+        <div class="post-meta">
+         
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T14:32:32+08:00">
+                2019-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试江湖/" itemprop="url" rel="index">
+                    <span itemprop="name">面试江湖</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/13/1-js初级面试题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/01/13/1-js初级面试题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/13/1-js初级面试题/" class="leancloud_visitors" data-flag-title="1.js初级面试题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="关于js"><a href="#关于js" class="headerlink" title="关于js"></a>关于js</h4><ol>
+<li>基于对象</li>
+<li><code>&lt;script language=&quot;javascript&quot;&gt;&lt;/script&gt;</code></li>
+<li><code>Firefox</code> 和 <code>IE</code>存在大量兼容性问题,其主要原因是他们对js的支持不同</li>
+<li>ajax技术一定要使用JavaScript</li>
+</ol>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ol>
+<li>截取<code>www.i7xy.cn</code>中的<code>i7xy</code>?</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'www.i7xy.cn'</span></span><br><span class="line">str = str.substr(<span class="number">4</span>,<span class="number">4</span>) <span class="comment">// 开始,截取长度</span></span><br><span class="line"><span class="built_in">console</span>.log(str)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>判断字符串,第一个必须为字母,后面可以是字母,数字,下划线,总长度为5~20</li>
+</ol>
+<blockquote>
+<p>\w表示任意字母,数字,下划线; {n}匹配多少位</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/^[a-zA-Z]&#123;1&#125;\w&#123;4,19&#125;$/</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'i7xy'</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'i7xy.cn'</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'7_i7xy'</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'i7xy_cn'</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'i7xy_xx_666666666'</span>)) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>编写一个方法,求字符串长度</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getLen = <span class="function"><span class="params">Str</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> Str.length</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getLen(<span class="string">'abcde'</span>)) <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(getLen(<span class="string">'hello'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(getLen(<span class="string">'i7xy'</span>)) <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(getLen(<span class="string">'arley'</span>))</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>找出字符串<code>arley_i7xy.cn_666</code>中的<code>i7xy</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'arley_i7xy.cn_666'</span></span><br><span class="line"><span class="keyword">const</span> searchText = <span class="string">'i7xy'</span></span><br><span class="line"><span class="keyword">const</span> s1 = str.substring(str.indexOf(searchText),str.indexOf(searchText) + searchText.length)</span><br><span class="line"><span class="keyword">const</span> s2 = str.substr(str.indexOf(searchText),searchText.length)</span><br><span class="line"><span class="built_in">console</span>.log(s1,s2)</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>模拟PHP的<code>$_GET</code>方法,获取链接参数</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> $_GET = <span class="function">(<span class="params">name</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">'?name=arley&amp;age=18&amp;sex=superman'</span></span><br><span class="line">    <span class="comment">// const url = location.href.search</span></span><br><span class="line">    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span> + name + <span class="string">"=([^&amp;]*)(&amp;|$)"</span>, <span class="string">"i"</span>)</span><br><span class="line">    <span class="keyword">var</span> r = url.substr(<span class="number">1</span>).match(reg)</span><br><span class="line">    <span class="built_in">console</span>.log(r) <span class="comment">// Array(4) ["name=arley&amp;", "", "arley", "&amp;"]</span></span><br><span class="line">    <span class="keyword">if</span> (r != <span class="literal">null</span>) <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]) <span class="comment">// 返回解码的字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log($_GET(<span class="string">'name'</span>))</span><br><span class="line"><span class="built_in">console</span>.log($_GET(<span class="string">'age'</span>))</span><br><span class="line"><span class="built_in">console</span>.log($_GET(<span class="string">'sex'</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>match匹配成功时会返回数组：</p>
+<ul>
+<li>如果正则为全局匹配，那么数组的第一个及以后元素存放的都是匹配的字符串，不再存放匹配的分组</li>
+<li>如果正则不为全局匹配，那么数组的第一个元素存放的是匹配的字符串，第二个及以后元素存放的是匹配的分组</li>
+</ul>
+</blockquote>
+<ol start="6">
+<li>删除一个字符串左边的空白字符</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> leftTrim = <span class="function"><span class="params">str</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/^\s*/g</span>,<span class="string">""</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(leftTrim(<span class="string">"  arley"</span>))</span><br><span class="line"><span class="built_in">console</span>.log(leftTrim(<span class="string">"  i7xy"</span>))</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li><code>typeof</code>返回</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="literal">null</span>)) <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="literal">undefined</span>)) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="string">"arley"</span>)) <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="string">"1"</span>===<span class="number">1</span>)) <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="number">1</span>)) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="literal">NaN</span>)) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)) <span class="comment">// function</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>([<span class="string">"a"</span>])) <span class="comment">// object</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>]</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(arr)) <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li><p>“5”+3 = 53</p>
+</li>
+<li><p>字符串反转函数</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> revStr = <span class="function"><span class="params">str</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(revStr(<span class="string">"abcde"</span>))</span><br></pre></td></tr></table></figure>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ol>
+<li><code>全局变量</code>: 在当前页面内有效</li>
+<li><code>undefined</code>由<code>null</code>派生而来,<code>undefinded</code>是声明了变量,但为赋值,<code>null</code>是找不到对象.</li>
+</ol>
+<h4 id="window的属性"><a href="#window的属性" class="headerlink" title="window的属性"></a>window的属性</h4><ol>
+<li>js刷新页面</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.reload(<span class="literal">true</span>) <span class="comment">// true 服务端获取刷新 , false 缓存中获取刷新</span></span><br><span class="line"></span><br><span class="line">location.replace(location.href)</span><br></pre></td></tr></table></figure>
+<h4 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h4><ol>
+<li>方法</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">appendChild() <span class="comment">// 添加节点</span></span><br><span class="line">removeChild() <span class="comment">// 移除节点</span></span><br><span class="line">cloneNode() <span class="comment">// 复制节点</span></span><br><span class="line">createElement() <span class="comment">// 创建元素</span></span><br><span class="line">createTextnode() <span class="comment">// 用指定的文本创建新的Element节点</span></span><br><span class="line">getElementById</span><br><span class="line">getElementsByTagName</span><br><span class="line">getElementsByName</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>追加元素</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">append()</span><br><span class="line"><span class="comment">// HTML代码为&lt;p&gt;I come from &lt;/p&gt;&lt;p&gt;I love  &lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 向所有p标签中追加一个单词china，则写法为 $("p").append("china");</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 结果为：&lt;p&gt;I come from china&lt;/p&gt;&lt;p&gt;I love china &lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line">appendTo()</span><br><span class="line"><span class="comment">// HTML代码为&lt;b&gt;I love china &lt;/b&gt;&lt;p&gt;&lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 把标签b追加到p元素中，写法为$("b").appendTo("p");</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 结果为：&gt;&lt;p&gt;&lt;b&gt;I love china &lt;/b&gt;&lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用appendTo这个方法是颠倒了常规的$(A).append(B)的操作，即不是把B追加到A中，而是把A追加到B中。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">1.html方法，给元素添加html代码或者清空html代码（参数为空字符串）；</span></span><br><span class="line"><span class="comment">2.append向元素的末尾添加html代码；</span></span><br><span class="line"><span class="comment">3.appendTo这个方法跟append方法的很像，只是要添加的html代码的目标有所不一样；</span></span><br><span class="line"><span class="comment">4.after向元素的后边添加html代码，如果元素后面有元素了，那将后面的元素后移，然后将html代码插入；</span></span><br><span class="line"><span class="comment">5.before向元素的前边添加html代码，如果元素前面有元素了，那将前面的元素前移，然后将html代码插入；</span></span><br><span class="line"><span class="comment">6.insertAfter将JQuery封装好的元素插入到指定元素的后面，如果元素后面有元素了，那将后面的元素后移，然后将JQuery对象插入；</span></span><br><span class="line"><span class="comment">7.insertBefore将JQuery封装好的元素插入到指定元素的前面，如果元素前面有元素了，那将前面的元素前移，然后将JQuery对象插入；</span></span><br><span class="line"><span class="comment">8.empty清空元素内部的html代码，它只是清空内部的html代码，但是标记仍然留在DOM中；</span></span><br><span class="line"><span class="comment">9.remove从DOM中移除整个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2019/01/02/easy-mock笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2134,206 +2397,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2018/10/20/Js回调函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Arley (郭磊)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端私塾">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/Js回调函数/" itemprop="url">Js回调函数</a></h2>
-        
-
-        <div class="post-meta">
-         
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-20T13:20:20+08:00">
-                2018-10-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/20/Js回调函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/20/Js回调函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/10/20/Js回调函数/" class="leancloud_visitors" data-flag-title="Js回调函数">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  171
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>主函数的事先干完，回头再调用传进来的那个函数。<br>ES5 到 ES6，深入了解<code>Promise</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/20/Js回调函数/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2388,7 +2451,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2399,7 +2462,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2489,7 +2552,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.2k</span>
+    <span title="Site words total count">25.3k</span>
   
 </div>
 
