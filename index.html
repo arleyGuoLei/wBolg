@@ -715,6 +715,230 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2019/01/13/2-js中级面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arley (郭磊)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端私塾">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/13/2-js中级面试题/" itemprop="url">2-js中级面试题</a></h2>
+        
+
+        <div class="post-meta">
+         
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T21:22:17+08:00">
+                2019-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试江湖/" itemprop="url" rel="index">
+                    <span itemprop="name">面试江湖</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/13/2-js中级面试题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/01/13/2-js中级面试题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/13/2-js中级面试题/" class="leancloud_visitors" data-flag-title="2-js中级面试题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  487
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ol>
+<li><p>易错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == undefinded <span class="comment">// true</span></span><br><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除<code>空</code>之外的字符串,除<code>0</code>以外的数字,转换为<code>Boolean</code>都为true</p>
+</li>
+<li><p><code>eval()</code>:把一个字符串当做js代码执行</p>
+</li>
+<li><p><code>parseInt</code>: 转换字符串为整数, 如果含有字母,结果为<code>NaN</code>,转换小数或小数文本,直接舍去小数点后部分,转换其他类型的结果为<code>NaN</code></p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(<span class="string">"11"</span>,<span class="number">2</span>) <span class="comment">// 二进制转10 3</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(<span class="string">"2019/01/13"</span>) <span class="comment">// 2019</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="built_in">parseInt</span>(<span class="string">"02"</span>,<span class="number">10</span>) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="字符串拓展方法"><a href="#字符串拓展方法" class="headerlink" title="字符串拓展方法"></a>字符串拓展方法</h4><ol>
+<li>给<code>String</code>拓展去除字符串左边空格功能</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.trimLeft =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s+/g</span>,<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除首尾</span></span><br><span class="line">    <span class="comment">// this.replace(/(^\s+)|(s+$)/g,"")</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">" arley"</span>.trimLeft())</span><br></pre></td></tr></table></figure>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><ol>
+<li>apply方法</li>
+</ol>
+<blockquote>
+<p>获取数组中的最大项和最小项</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">99</span>,<span class="number">991</span>,<span class="number">232</span>,<span class="number">11</span>,<span class="number">992</span>,<span class="number">-1997</span>]</span><br><span class="line"><span class="keyword">const</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr) <span class="comment">// 992</span></span><br><span class="line"><span class="keyword">const</span> min = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>,arr) <span class="comment">// -1997</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a)<span class="built_in">Math</span>.max 可以实现得到数组中最大的一项</span><br><span class="line"></span><br><span class="line">因为<span class="built_in">Math</span>.max 参数里面不支持<span class="built_in">Math</span>.max([param1,param2]) 也就是数组</span><br><span class="line"></span><br><span class="line">但是它支持<span class="built_in">Math</span>.max(param1,param2,param3…),所以可以根据刚才apply的那个特点来解决 <span class="keyword">var</span> max=<span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,array),这样轻易的可以得到一个数组中最大的一项(apply会将一个数组装换为一个参数接一个参数的传递给方法)</span><br><span class="line"></span><br><span class="line">这块在调用的时候第一个参数给了一个<span class="literal">null</span>,这个是因为没有对象去调用这个方法,我只需要用这个方法帮我运算,得到返回的结果就行,.所以直接传递了一个<span class="literal">null</span>过去</span><br><span class="line"></span><br><span class="line">b)<span class="built_in">Math</span>.min  可以实现得到数组中最小的一项</span><br><span class="line"></span><br><span class="line">同样和 max是一个思想 <span class="keyword">var</span> min=<span class="built_in">Math</span>.min.apply(<span class="literal">null</span>,array);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>判断是否为数组</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"arley"</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(arr) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor === <span class="built_in">Array</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(str) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str.constructor === <span class="built_in">Array</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(obj) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Array</span>)</span><br></pre></td></tr></table></figure>
+<p>3. </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2019/01/13/1-js初级面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2189,214 +2413,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2018/10/20/Math的三个取整方法区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Arley (郭磊)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端私塾">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/Math的三个取整方法区别/" itemprop="url">Math的三个取整方法区别</a></h2>
-        
-
-        <div class="post-meta">
-         
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-20T13:25:18+08:00">
-                2018-10-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/20/Math的三个取整方法区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/20/Math的三个取整方法区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/10/20/Math的三个取整方法区别/" class="leancloud_visitors" data-flag-title="Math的三个取整方法区别">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  272
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><code>Math.round()</code> ： 四舍五入</p>
-<p><code>Math.ceil()</code> ： ceil为天花板意思，所以为向上取整。</p>
-<blockquote>
-<p>让数尽量变大</p>
-</blockquote>
-<p><code>Math.floor()</code> ： floor为地板意思，所以为向下取整。</p>
-<blockquote>
-<p>让数尽量变小</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/20/Math的三个取整方法区别/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2451,7 +2467,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2552,7 +2568,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">25.3k</span>
+    <span title="Site words total count">25.7k</span>
   
 </div>
 
