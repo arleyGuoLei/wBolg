@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部分">
+<meta name="description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
 <meta name="keywords" content="面试,JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-js中级面试题">
 <meta property="og:url" content="https://www.i7xy.cn/2019/01/13/2-js中级面试题/index.html">
 <meta property="og:site_name" content="前端私塾">
-<meta property="og:description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部分">
+<meta property="og:description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-13T14:21:39.171Z">
+<meta property="og:updated_time" content="2019-01-18T02:29:33.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-js中级面试题">
-<meta name="twitter:description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部分">
+<meta name="twitter:description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
 
 
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  487
+                  655
                 </span>
               
 
@@ -452,7 +452,8 @@
       
 
       
-        <h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ol>
+        <a id="more"></a>
+<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ol>
 <li><p>易错</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == undefinded <span class="comment">// true</span></span><br><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -479,8 +480,28 @@
 <ol start="2">
 <li>判断是否为数组</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"arley"</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(arr) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor === <span class="built_in">Array</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(str) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str.constructor === <span class="built_in">Array</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(obj) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Array</span>)</span><br></pre></td></tr></table></figure>
-<p>3. </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"arley"</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(arr) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor === <span class="built_in">Array</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(str) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str.constructor === <span class="built_in">Array</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(obj) === <span class="string">"[object Array]"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Array</span>)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>删除数组某一项</li>
+</ol>
+<p>a. <code>splice(index,len,[item])</code>   注释：该方法会改变原始数组。<br>splice有3个参数，它也可以用来替换/删除/添加数组内某一个或者几个值<br>index:数组开始下标        len: 替换/删除的长度       item:替换的值，删除操作的话 item为空</p>
+<p>b. <code>delete</code>: delete删除掉数组中的元素后，会把该下标出的值置为undefined,数组的长度不会变</p>
+<ol start="4">
+<li>增加,删除元素</li>
+</ol>
+<ul>
+<li>push: 尾+</li>
+<li>pop: 尾-</li>
+<li>unshift: 头+</li>
+<li>shit: 头-</li>
+</ul>
+<ol start="5">
+<li>数组排序</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">arr = arr.sort(<span class="function">(<span class="params">v1,v2</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v1-v2 <span class="comment">// 小到大排序</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ol>
+<li><code>arguments</code></li>
+</ol>
 
       
     </div>
@@ -732,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式"><span class="nav-number">1.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拓展方法"><span class="nav-number">2.</span> <span class="nav-text">字符串拓展方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式"><span class="nav-number">1.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拓展方法"><span class="nav-number">2.</span> <span class="nav-text">字符串拓展方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li></ol></div>
             
 
           </div>
@@ -766,7 +787,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">25.7k</span>
+    <span title="Site words total count">25.9k</span>
   
 </div>
 
