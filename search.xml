@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mysql插入emoji表情]]></title>
+    <url>%2F2019%2F01%2F28%2Fmysql%E6%8F%92%E5%85%A5emoji%E8%A1%A8%E6%83%85%2F</url>
+    <content type="text"><![CDATA[emoji表情需要mysql5.5.3+版本,且全局编码为utf8mb4 (只设置数据库和数据表的会失败!) 安装 5.5.3+ sudo apt-get install mysql-server mysql-client 查看安装之后的默认账号和密码 cat /etc/mysql/debian.cnf 登录 mysql -u 账号 -p 修改root密码 1234567mysql&gt; use mysql;mysql&gt; select host,user,plugin,authentication_string from user; mysql&gt; update user set plugin="mysql_native_password",authentication_string=password('新密码') where user="root";mysql&gt; FLUSH PRIVILEGES; 修改mysql配置文件my.cnf（windows为my.ini，linux为my.cnf） my.cnf一般在etc/mysql/my.cnf位置。找到后请在以下三部分里添加如下内容： 1234567891011121314151617181920[client]default-character-set = utf8mb4[mysql]default-character-set = utf8mb4[mysqld]character-set-client-handshake = FALSEcharacter-set-server = utf8mb4collation-server = utf8mb4_unicode_ciinit_connect='SET NAMES utf8mb4' 重启mysql数据库，重新查看字符集 /etc/init.d/mysql restart 1SHOW VARIABLES WHERE Variable_name LIKE 'character_set_%' OR Variable_name LIKE 'collation%';]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2-js中级面试题]]></title>
     <url>%2F2019%2F01%2F13%2F2-js%E4%B8%AD%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
     <content type="text"><![CDATA[表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false 除空之外的字符串,除0以外的数字,转换为Boolean都为true eval():把一个字符串当做js代码执行 parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部分,转换其他类型的结果为NaN 123let a = parseInt("11",2) // 二进制转10 3let b = parseInt("2019/01/13") // 2019let c = parseInt("02",10) // 2 字符串拓展方法 给String拓展去除字符串左边空格功能 12345678String.prototype.trimLeft =function()&#123; return this.replace(/^\s+/g,"") // 删除首尾 // this.replace(/(^\s+)|(s+$)/g,"")&#125;console.log(" arley".trimLeft()) 数组 apply方法 获取数组中的最大项和最小项 123let arr = [1,2,3,4,5,99,991,232,11,992,-1997]const max = Math.max.apply(null,arr) // 992const min = Math.min.apply(null,arr) // -1997 1234567891011a)Math.max 可以实现得到数组中最大的一项因为Math.max 参数里面不支持Math.max([param1,param2]) 也就是数组但是它支持Math.max(param1,param2,param3…),所以可以根据刚才apply的那个特点来解决 var max=Math.max.apply(null,array),这样轻易的可以得到一个数组中最大的一项(apply会将一个数组装换为一个参数接一个参数的传递给方法)这块在调用的时候第一个参数给了一个null,这个是因为没有对象去调用这个方法,我只需要用这个方法帮我运算,得到返回的结果就行,.所以直接传递了一个null过去b)Math.min 可以实现得到数组中最小的一项同样和 max是一个思想 var min=Math.min.apply(null,array); 判断是否为数组 12345678910111213const arr = [1,2]const str = "arley"const obj = &#123;&#125;console.log(Object.prototype.toString.call(arr) === "[object Array]")console.log(arr.constructor === Array)console.log(arr instanceof Array)console.log(Object.prototype.toString.call(str) === "[object Array]")console.log(str.constructor === Array)console.log(Object.prototype.toString.call(obj) === "[object Array]")console.log(obj.constructor === Array) 删除数组某一项 a. splice(index,len,[item]) 注释：该方法会改变原始数组。splice有3个参数，它也可以用来替换/删除/添加数组内某一个或者几个值index:数组开始下标 len: 替换/删除的长度 item:替换的值，删除操作的话 item为空 b. delete: delete删除掉数组中的元素后，会把该下标出的值置为undefined,数组的长度不会变 增加,删除元素 push: 尾+ pop: 尾- unshift: 头+ shit: 头- 数组排序 12345let arr = [1,4,6,7,9,11,7,6,5,4,3,2]arr = arr.sort((v1,v2)=&gt;&#123; return v1-v2 // 小到大排序&#125;) 函数 arguments]]></content>
