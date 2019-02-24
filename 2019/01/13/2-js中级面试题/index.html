@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
+<meta name="description" content="表达式 易错  123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
 <meta name="keywords" content="面试,JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-js中级面试题">
-<meta property="og:url" content="https://www.i7xy.cn/2019/01/13/2-js中级面试题/index.html">
+<meta property="og:url" content="http://www.i7xy.cn/2019/01/13/2-js中级面试题/index.html">
 <meta property="og:site_name" content="前端私塾">
-<meta property="og:description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
+<meta property="og:description" content="表达式 易错  123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-28T12:16:59.275Z">
+<meta property="og:updated_time" content="2019-02-24T14:00:42.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-js中级面试题">
-<meta name="twitter:description" content="表达式 易错 123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
+<meta name="twitter:description" content="表达式 易错  123null == undefinded // trueNaN == NaN // falsenull instanceof Object // false  除空之外的字符串,除0以外的数字,转换为Boolean都为true  eval():把一个字符串当做js代码执行  parseInt: 转换字符串为整数, 如果含有字母,结果为NaN,转换小数或小数文本,直接舍去小数点后部">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://www.i7xy.cn/2019/01/13/2-js中级面试题/"/>
+  <link rel="canonical" href="http://www.i7xy.cn/2019/01/13/2-js中级面试题/"/>
 
 
 
@@ -173,7 +173,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">前端就该这么学</h1>
+        <h1 class="site-subtitle" itemprop="description">等我前端成龙了, 再来教大家!</h1>
       
   </div>
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.i7xy.cn/2019/01/13/2-js中级面试题/">
+    <link itemprop="mainEntityOfPage" href="http://www.i7xy.cn/2019/01/13/2-js中级面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Arley (郭磊)">
@@ -452,11 +452,11 @@
       
 
       
-        <a id="more"></a>
-<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ol>
-<li><p>易错</p>
+        <h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ol>
+<li>易错</li>
+</ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == undefinded <span class="comment">// true</span></span><br><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-</li>
+<ol start="2">
 <li><p>除<code>空</code>之外的字符串,除<code>0</code>以外的数字,转换为<code>Boolean</code>都为true</p>
 </li>
 <li><p><code>eval()</code>:把一个字符串当做js代码执行</p>
@@ -465,6 +465,7 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(<span class="string">"11"</span>,<span class="number">2</span>) <span class="comment">// 二进制转10 3</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(<span class="string">"2019/01/13"</span>) <span class="comment">// 2019</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="built_in">parseInt</span>(<span class="string">"02"</span>,<span class="number">10</span>) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="字符串拓展方法"><a href="#字符串拓展方法" class="headerlink" title="字符串拓展方法"></a>字符串拓展方法</h4><ol>
 <li>给<code>String</code>拓展去除字符串左边空格功能</li>
 </ol>
@@ -674,7 +675,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -791,7 +792,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.1k</span>
+    <span title="Site words total count">26.2k</span>
   
 </div>
 
@@ -958,7 +959,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://www.i7xy.cn/2019/01/13/2-js中级面试题/';
+          this.page.url = 'http://www.i7xy.cn/2019/01/13/2-js中级面试题/';
           this.page.identifier = '2019/01/13/2-js中级面试题/';
           this.page.title = '2-js中级面试题';
         };
